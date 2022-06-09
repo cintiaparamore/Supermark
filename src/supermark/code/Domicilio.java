@@ -7,10 +7,8 @@ public class Domicilio {
 	private Integer piso;
 	private Integer nroDpto;
 	private Domicilio domicilio;
-	
 
-	}
-	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto) {
+	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto, Domicilio domicilio) {
 		super();
 		this.calle = calle;
 		this.nro = nro;

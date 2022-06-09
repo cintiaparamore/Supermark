@@ -5,12 +5,14 @@ public class usuario {
 	private Integer id;
 	private String nombre;
 	private String domicilio;
+	private Long dni;
 
-	public usuario(Integer id, String nombre, String domicilio) {
+	public usuario(Integer id, String nombre, String domicilio,Long dni) {
 
 		this.id = id;
 		this.nombre = nombre;
 		this.domicilio = domicilio;
+		this.dni = dni;
 
 	}
 
@@ -38,11 +40,20 @@ public class usuario {
 		this.domicilio = domicilio;
 	}
 
+	public Long getDni() {
+		return dni;
+	}
+
+	public void setDni(Long dni) {
+		this.dni = dni;
+	}
+
 	public void mostrar() {
 		
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("ID: " + this.id);
 		System.out.println("Domicilio: " + this.domicilio);
+		System.out.println("DNI: "+this.dni);
 	}
 
 }
