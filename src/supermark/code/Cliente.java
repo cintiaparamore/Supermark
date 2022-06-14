@@ -7,15 +7,18 @@ public class Cliente {
 	private String apellido;
 	private String domicilio;
 	private String telefono;
+	private String localidad;
 	private Long dni;
 
-	public Cliente(Integer id, String nombre, String apellido, String domicilio, String telefono, Long dni) {
+	public Cliente(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
+			Long dni) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
+		this.localidad = localidad;
 		this.dni = dni;
 	}
 
@@ -66,15 +69,25 @@ public class Cliente {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
 
 	public void mostrar() {
 
-		System.out.println("ID: " + this.id);
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("Apellido: " + this.apellido);
-		System.out.println("Domicilio: " + this.domicilio);
-		System.out.println("Telefono: " + this.telefono);
+		System.out.println("ID: " + this.id);
 		System.out.println("DNI: " + this.dni);
+		System.out.println("Domicilio: " + this.domicilio);
+		System.out.println("Localidad: "+this.localidad);
+		System.out.println("Telefono: " + this.telefono);
+		
 	}
 
 }
