@@ -2,58 +2,31 @@ package supermark.code;
 
 public class Usuario {
 
-	private Integer id;
-	private String nombre;
-	private String domicilio;
-	private Long dni;
-
-	public usuario(Integer id, String nombre, String domicilio,Long dni) {
-
-		this.id = id;
-		this.nombre = nombre;
-		this.domicilio = domicilio;
-		this.dni = dni;
-
+	private String email;
+	private String clave;
+	
+	public Usuario(String email, String clave) {
+		super();
+		this.email = email;
+		this.clave = clave;
 	}
-
-	public Integer getId() {
-		return id;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public String getNombre() {
-		return nombre;
+	public String getClave() {
+		return clave;
 	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
-
-	public String getDomicilio() {
-		return domicilio;
-	}
-
-	public void setDomicilio(String domicilio) {
-		this.domicilio = domicilio;
-	}
-
-	public Long getDni() {
-		return dni;
-	}
-
-	public void setDni(Long dni) {
-		this.dni = dni;
-	}
-
+	
 	public void mostrar() {
-		
-		System.out.println("Nombre: " + this.nombre);
-		System.out.println("ID: " + this.id);
-		System.out.println("Domicilio: " + this.domicilio);
-		System.out.println("DNI: "+this.dni);
+
+		System.out.println("Email: " + this.email);
+		System.out.println("Clave: " + this.clave);
 	}
 
 }
