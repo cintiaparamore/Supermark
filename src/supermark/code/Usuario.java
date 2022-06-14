@@ -1,6 +1,6 @@
 package supermark.code;
 
-public class usuario {
+public class Usuario {
 
 	private Integer id;
 	private String nombre;
