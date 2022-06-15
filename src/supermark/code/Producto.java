@@ -7,7 +7,7 @@ public class Producto {
 	private String nombre;
 	private String marca;
 	private String descripcion;
-	//private Date fecha_vec;
+	private Date fecha_vec;
 	private Double precio;
 	private Integer stock;
 	private String categoria;
