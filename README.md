@@ -1,5 +1,6 @@
 # Supermark
 "Proyecto Final Java" - 1000 Programadores Salteños
+
                                                          Sistema de Gestión
                                                          
 
@@ -31,9 +32,3 @@ Para la Administración:
 -	Modificar los datos de los productos cargados
 -	Ver todos los usuarios que realizaron una compra
 -	Ver listado de productos seleccionados por el usuario
-
-Consideraciones
-
--	Controlar el stock de productos.
--	No se puede seleccionar un producto con stock 0
--	Los usuarios pueden seleccionar hasta 30 artículos.
