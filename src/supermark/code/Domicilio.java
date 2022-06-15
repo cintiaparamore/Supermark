@@ -9,7 +9,7 @@ public class Domicilio {
 	private String barrio;
 	private String localidad;
 	
-	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto, Domicilio domicilio, String barrio,
+	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto, String barrio,
 			String localidad) {
 		super();
 		this.calle = calle;
