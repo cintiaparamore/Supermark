@@ -9,9 +9,10 @@ public class Cliente {
 	private String telefono;
 	private String localidad;
 	private Long dni;
+	private String email;
 
 	public Cliente(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
-			Long dni) {
+			Long dni, String email) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -20,6 +21,7 @@ public class Cliente {
 		this.telefono = telefono;
 		this.localidad = localidad;
 		this.dni = dni;
+		this.email = email;
 	}
 
 	public Integer getId() {
@@ -77,6 +79,14 @@ public class Cliente {
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public void mostrar() {
 
@@ -87,6 +97,7 @@ public class Cliente {
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: "+this.localidad);
 		System.out.println("Telefono: " + this.telefono);
+		System.out.println("Email: "+this.email);
 		
 	}
 
