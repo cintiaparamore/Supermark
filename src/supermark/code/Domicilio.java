@@ -6,18 +6,16 @@ public class Domicilio {
 	private Integer nro;
 	private Integer piso;
 	private Integer nroDpto;
-	private Domicilio domicilio;
 	private String barrio;
 	private String localidad;
 	
-	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto, Domicilio domicilio, String barrio,
+	public Domicilio(String calle, Integer nro, Integer piso, Integer nroDpto, String barrio,
 			String localidad) {
 		super();
 		this.calle = calle;
 		this.nro = nro;
 		this.piso = piso;
 		this.nroDpto = nroDpto;
-		this.domicilio = domicilio;
 		this.barrio = barrio;
 		this.localidad = localidad;
 	}
@@ -67,11 +65,5 @@ public class Domicilio {
 	public void setNroDpto(Integer nroDpto) {
 		this.nroDpto = nroDpto;
 	}
-	public Domicilio getDomicilio() {
-		return domicilio;
-	}
-	public void setDomicilio(Domicilio domicilio) {
-		this.domicilio = domicilio;
-	
-	}
+
 }
