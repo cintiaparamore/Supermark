@@ -100,4 +100,11 @@ public class Producto {
 		System.out.println("Stock: "+this.stock);
 		System.out.println("Categoria: "+this.categoria);
 	}
+<<<<<<< HEAD
 }
+=======
+	
+    
+	
+}
+>>>>>>> f48030c37473454d0efe90e849ac224d11dc9641
