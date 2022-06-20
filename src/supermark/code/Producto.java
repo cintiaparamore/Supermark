@@ -1,38 +1,52 @@
-package supermark.code;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import java.sql.Date;
 
 public class Producto {
-	private Integer id;
+
+	Statement stmt = null;
+
+	ConexionBDD connection = new ConexionBDD();
+    Connection acceso;
+    
+	
+	private int codigo;
 	private String nombre;
 	private String marca;
 	private String descripcion;
-	//private Date fecha_vec;
 	private Double precio;
 	private Integer stock;
 	private String categoria;
 
-	public Producto(Integer id, String nombre, String marca, String descripcion, Date fecha_vec, Double precio,
+			
+	
+	public Producto(int codigo, String nombre, String marca, String descripcion, Double precio,
 			Integer stock, String categoria) {
 		super();
-		this.id = id;
+		this.codigo = codigo;
 		this.nombre = nombre;
 		this.marca = marca;
 		this.descripcion = descripcion;
-		this.fecha_vec = fecha_vec;
 		this.precio = precio;
 		this.stock = stock;
 		this.categoria = categoria;
 	}
 
 	
+	public Producto() {
+		super();
+	}
 	
-	public Integer getId() {
-		return id;
+		
+
+	public Integer getcodigo() {
+		return codigo;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -51,14 +65,7 @@ public class Producto {
 		this.marca = marca;
 	}
 
-	public Date getFecha_vec() {
-		return fecha_vec;
-	}
-
-	public void setFecha_vec(Date fecha_vec) {
-		this.fecha_vec = fecha_vec;
-	}
-
+		
 	public Double getPrecio() {
 		return precio;
 	}
@@ -91,18 +98,193 @@ public class Producto {
 		this.categoria = categoria;
 	}
 	
+	
 	public void mostrar() {
 
-		System.out.println("ID: " + this.id);
+		System.out.println("Código: " + this.codigo);
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Descripcion: " + this.descripcion);
-		System.out.println("Fecha de vecimiento: " + this.fecha_vec);
 		System.out.println("Precio: " + this.precio);
 		System.out.println("Stock: "+this.stock);
 		System.out.println("Categoria: "+this.categoria);
 	}
+		
+		
+	public void agregarProducto(String nombre, String marca, String descripcion, Double precio, int stock, int categoria) {
+		
+		acceso = connection.Conectar();
+			
+		try {
+			stmt = acceso.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		String sql_insertar = "INSERT INTO productos \r\n"
+				     + "VALUES \r\n"
+				     + "(null,'"+nombre+"','"+marca+"','"+descripcion+"',"+precio+","+stock+","+categoria+")\r\n"
+				     + ";";
+		
+		
+		
+		try {
+			stmt = acceso.createStatement();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//ResultSet rs= stmt.executeQuery(sql);
+		
+		try {
+			stmt.executeUpdate(sql_insertar);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		System.out.println("Producto agregado.");
+		
+		
 	
-    
+		
+		
+		
+	}
 	
+
+	public void modificarNombreProducto(int codmodi, String nommodi) {
+		
+		String sql_modi = "UPDATE productos SET nombre ='"+nommodi+"' WHERE codigo = "+codmodi;
+		
+		try {
+			stmt.executeUpdate(sql_modi);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		
+		System.out.println("Producto "+codmodi+" modificado.");
+			
+	}
+
+	
+	
+   public void modificarPrecioProducto(int codmodi, Double preciomodi) {
+		
+		String sql_modi = "UPDATE productos SET precio ="+preciomodi+" WHERE codigo = "+codmodi;
+		
+		try {
+			stmt.executeUpdate(sql_modi);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		
+		System.out.println("Producto "+codmodi+" modificado.");
+		
+	}
+	
+
+   
+	public void eliminarProducto(int codeli) {
+		
+		String sql_modi = "DELETE FROM productos WHERE codigo ="+codeli;
+		
+		try {
+			stmt.executeUpdate(sql_modi);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		
+		System.out.println("Producto "+codeli+" eliminado.");
+			
+	}
+	
+	
+	
+ 	public void listarProductos() {
+		
+		System.out.println("LISTADO DE PRODUCTOS");
+				
+		try {
+			
+			String sql="Select * from productos";
+			
+			acceso = connection.Conectar();
+			stmt = acceso.createStatement();
+			
+			ResultSet rs= stmt.executeQuery(sql);
+			
+			int c=0;
+			
+			while (rs.next()) {
+				int codigo = rs.getInt("codigo");
+				String nombre=rs.getString("nombre");
+				String marca = rs.getString("marca");
+				String descripcion = rs.getString("descripcion");
+				Double precio = rs.getDouble("precio");
+				
+				System.out.print("Código: " + codigo + " | ");
+				System.out.print("Nombre: " + nombre + " | ");
+				System.out.print("Marca: " + marca+ " | ");
+				System.out.print("Descripción: " + descripcion+ " | ");
+				System.out.println("Precio: " + precio);
+				c++;
+			}
+			
+			System.out.println("Cantidad de Productos: "+c);
+									
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("Error al conectarse a la Base de Datos.");
+			e1.printStackTrace();
+		}
+	}
+	
+	
+	
+	public void listarUnProducto(int codigoBuscado) {
+		
+		System.out.println("------- PRODUCTO SELECCIONADO -------");
+		
+		String sql = "SELECT * FROM productos WHERE codigo="+codigoBuscado;
+		
+		acceso = connection.Conectar();
+		try {
+			stmt = acceso.createStatement();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			ResultSet rs;
+					 
+			rs = stmt.executeQuery(sql);
+			rs.next();
+			int codigo = rs.getInt("codigo");
+	    	String nombre=rs.getString("nombre");
+			String marca = rs.getString("marca");
+			String descripcion = rs.getString("descripcion");
+			Double precio = rs.getDouble("precio");
+					
+			System.out.print("Código: " + codigo + " | ");
+			System.out.print("Nombre: " + nombre + " | ");
+			System.out.print("Marca: " + marca+ " | ");
+			System.out.print("Descripción: " + descripcion+ " | ");
+			System.out.println("Precio: " + precio);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+
 }
