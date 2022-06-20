@@ -101,7 +101,7 @@ public class Factura {
 		System.out.println("Señor(res): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: " + this.localidad);
-		System.out.println("Cantidad: "+this.cantidad);
+		System.out.println("Cantidad: "+this.cantidad);  
 		System.out.println("Detalle: " + this.detalles);
 		System.out.println("Total: " + this.total);
 	}
