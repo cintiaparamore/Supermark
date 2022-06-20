@@ -8,14 +8,15 @@ public class Factura {
 	private char tipo;
 	private Integer id;
 	private Date fecha;
-	private ArrayList<Detalle> detalles;
-	private String localidad;
-	private String domicilio;
+	private Cliente localidad;
+	private Domicilio domicilio;
 	private Cliente cliente;
-	private float total;
+	private Detalle cantidad;
+	private ArrayList<Detalle> detalles;
+	private Detalle total;
 
-	public Factura(char tipo, Integer id, Date fecha, ArrayList<Detalle> detalles, String localidad, String domicilio,
-			Cliente cliente, float total) {
+	public Factura(char tipo, Integer id, Date fecha, ArrayList<Detalle> detalles, Cliente localidad, Domicilio domicilio,
+			Cliente cliente, Detalle total) {
 		super();
 		this.tipo = tipo;
 		this.id = id;
@@ -35,19 +36,19 @@ public class Factura {
 		this.detalles = detalles;
 	}
 
-	public String getDomicilio() {
+	public Domicilio getDomicilio() {
 		return domicilio;
 	}
 
-	public void setDomicilio(String domicilio) {
+	public void setDomicilio(Domicilio domicilio) {
 		this.domicilio = domicilio;
 	}
 
-	public float getTotal() {
+	public Detalle getTotal() {
 		return total;
 	}
 
-	public void setTotal(float total) {
+	public void setTotal(Detalle total) {
 		this.total = total;
 	}
 
@@ -67,11 +68,11 @@ public class Factura {
 		this.fecha = fecha;
 	}
 
-	public String getLocalidad() {
+	public Cliente getLocalidad() {
 		return localidad;
 	}
 
-	public void setLocalidad(String localidad) {
+	public void setLocalidad(Cliente localidad) {
 		this.localidad = localidad;
 	}
 
@@ -94,12 +95,13 @@ public class Factura {
 
 	public void mostrar() {
 		
-		System.out.println("Tipo: " + this.tipo);
-		System.out.println("ID: "+this.id);
+		System.out.println("Tipo de Factura: " + this.tipo);
+		System.out.println("Nro de Factura: "+this.id);
 		System.out.println("Fecha: " + this.fecha);
-		System.out.println("Cliente: " + this.cliente);
+		System.out.println("Señor(res): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: " + this.localidad);
+		System.out.println("Cantidad: "+this.cantidad);
 		System.out.println("Detalle: " + this.detalles);
 		System.out.println("Total: " + this.total);
 	}

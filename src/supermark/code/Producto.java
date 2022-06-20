@@ -8,11 +8,11 @@ public class Producto {
 	private String marca;
 	private String descripcion;
 	private Date fecha_vec;
-	private Double precio;
+	private Float precio;
 	private Integer stock;
 	private String categoria;
 
-	public Producto(Integer id, String nombre, String marca, String descripcion, Date fecha_vec, Double precio,
+	public Producto(Integer id, String nombre, String marca, String descripcion, Date fecha_vec, Float precio,
 			Integer stock, String categoria) {
 		super();
 		this.id = id;
@@ -57,11 +57,11 @@ public class Producto {
 		this.fecha_vec = fecha_vec;
 	}
 
-	public Double getPrecio() {
+	public Float getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Double precio) {
+	public void setPrecio(Float precio) {
 		this.precio = precio;
 	}
 
@@ -100,11 +100,6 @@ public class Producto {
 		System.out.println("Stock: "+this.stock);
 		System.out.println("Categoria: "+this.categoria);
 	}
-<<<<<<< HEAD
+	   	
 }
-=======
-	
-    
-	
-}
->>>>>>> f48030c37473454d0efe90e849ac224d11dc9641
+
