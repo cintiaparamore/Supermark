@@ -118,9 +118,11 @@ public class Cliente {
 		
 	}
 	
-	public static void main(String arg[]) {	
-	Cliente p1 = new Cliente(1, "Cintia", "Paramore", "Caseros 1685", "4230309", "Salta, Capital", 40985456, "cintiaparamore@gmail.com");
-	p1.mostrar();
-
-	}
+	/*
+	 * public static void main(String arg[]) { Cliente p1 = new Cliente(1, "Cintia",
+	 * "Paramore", "Caseros 1685", "4230309", "Salta, Capital", 40985456,
+	 * "cintiaparamore@gmail.com"); p1.mostrar();
+	 * 
+	 * }
+	 */
 }

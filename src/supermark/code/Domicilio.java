@@ -80,10 +80,11 @@ public class Domicilio {
 
 	}
 
-	public static void main(String arg[]) {
-		Domicilio p1 = new Domicilio("Caseros", 1685, 5, null, null, "Chacabuco");
-		p1.mostrar();
-
-	}
+	/*
+	 * public static void main(String arg[]) { Domicilio p1 = new
+	 * Domicilio("Caseros", 1685, 5, null, null, "Chacabuco"); p1.mostrar();
+	 * 
+	 * }
+	 */
 
 }
