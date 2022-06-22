@@ -1,3 +1,4 @@
+package supermark.code;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -118,9 +119,9 @@ public class Producto {
 
 		try {
 			stmt = acceso.createStatement();
-		} catch (SQLException e1) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
 
 		// ResultSet rs= stmt.executeQuery(sql);
