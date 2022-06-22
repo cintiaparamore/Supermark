@@ -29,10 +29,11 @@ public class Usuario {
 		System.out.println("Clave: " + this.clave);
 	}
 	
-	public static void main(String arg[]) {	
-		Usuario p1 = new Usuario("cintiaparamore", "qwertyasdfzxcvb25");
-		p1.mostrar();
-
-	}
+	/*
+	 * public static void main(String arg[]) { Usuario p1 = new
+	 * Usuario("cintiaparamore", "qwertyasdfzxcvb25"); p1.mostrar();
+	 * 
+	 * }
+	 */
 
 }
