@@ -2,6 +2,7 @@ package supermark.code;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,11 +14,12 @@ public class ConexionBDD {
 	static final String USER = "root";
 	static final String PASS = "blackpink94";
 
-	public Connection Conectar() {
-
-		Connection connection = null;
-		Statement stmt = null;
-
+	private	Connection connection = null;
+	private	Statement stmt = null;
+	private ResultSet rs =null;
+	
+	
+	public Connection connect(){
 		try {
 			Class.forName(JDBC_DRIVER);
 		} catch (ClassNotFoundException e) {
