@@ -1,6 +1,16 @@
 package supermark.code;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Cliente {
+	Statement stmt = null;
+	ConexionBDD connection = new ConexionBDD();
+	Connection acceso;
 
 	private Integer id;
 	private String nombre;
@@ -23,6 +33,10 @@ public class Cliente {
 		this.localidad = localidad;
 		this.dni = (long) dni;
 		this.email = email;
+	}
+
+	public Cliente() {
+		super();
 	}
 
 	public Integer getId() {
@@ -116,6 +130,37 @@ public class Cliente {
 		System.out.println("DNI: " + this.dni);
 		System.out.println("Email: "+this.email);
 		
+	}
+
+
+	public void registrarCliente(){
+		Scanner reg = new Scanner(System.in);
+		System.out.println("Ingresar Nombre");
+		nombre = reg.nextLine();
+		System.out.println("Ingrese Apellido");
+		apellido = reg.nextLine();
+		System.out.println("Ingrese DNI");
+		dni = reg.nextLong();
+		System.out.println("Ingrese Telefono");
+		reg.nextLine();
+		telefono = reg.nextLine();
+		System.out.println("Ingrese Localidad");
+		localidad = reg.nextLine();
+		System.out.println("Ingrese Domicilio");
+		domicilio = reg.nextLine();
+		System.out.println("Ingrese Email");
+		email = reg.nextLine();
+		String sql = "insert into clientes values (null, '"+nombre+"', '"+apellido+"', '"+domicilio+"', '"+telefono+"', '"+localidad+"', '"+dni+"', '"+email+"')";
+		acceso = connection.connect();
+		
+		try {
+			stmt = acceso.createStatement();
+			stmt.executeUpdate(sql);
+
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	
 	/*

@@ -93,7 +93,7 @@ public class Producto {
 
 	public void mostrar() {
 
-		System.out.println("Código: " + this.codigo);
+		System.out.println("Cï¿½digo: " + this.codigo);
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Descripcion: " + this.descripcion);
@@ -105,7 +105,7 @@ public class Producto {
 	public void agregarProducto(String nombre, String marca, String descripcion, Double precio, int stock,
 			int categoria) {
 
-		acceso = connection.Conectar();
+		acceso = connection.connect();
 
 		try {
 			stmt = acceso.createStatement();
@@ -190,7 +190,7 @@ public class Producto {
 
 			String sql = "Select * from productos";
 
-			acceso = connection.Conectar();
+			acceso = connection.connect();
 			stmt = acceso.createStatement();
 
 			ResultSet rs = stmt.executeQuery(sql);
@@ -204,10 +204,10 @@ public class Producto {
 				String descripcion = rs.getString("descripcion");
 				Double precio = rs.getDouble("precio");
 
-				System.out.print("Código: " + codigo + " | ");
+				System.out.print("Cï¿½digo: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
-				System.out.print("Descripción: " + descripcion + " | ");
+				System.out.print("Descripciï¿½n: " + descripcion + " | ");
 				System.out.println("Precio: " + precio);
 				c++;
 			}
@@ -227,7 +227,7 @@ public class Producto {
 
 		String sql = "SELECT * FROM productos WHERE codigo=" + codigoBuscado;
 
-		acceso = connection.Conectar();
+		acceso = connection.connect();
 		try {
 			stmt = acceso.createStatement();
 		} catch (SQLException e1) {
@@ -246,10 +246,10 @@ public class Producto {
 			String descripcion = rs.getString("descripcion");
 			Double precio = rs.getDouble("precio");
 
-			System.out.print("Código: " + codigo + " | ");
+			System.out.print("Cï¿½digo: " + codigo + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
-			System.out.print("Descripción: " + descripcion + " | ");
+			System.out.print("Descripciï¿½n: " + descripcion + " | ");
 			System.out.println("Precio: " + precio);
 
 		} catch (SQLException e) {
