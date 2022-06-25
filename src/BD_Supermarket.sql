@@ -81,14 +81,19 @@ UNLOCK TABLES;
 
 -- Dump completed on 2022-06-20 18:37:43
 
-CREATE TABLE `bd_supermark`.`cliente` (
-  `id` INT(4) NOT NULL AUTO_INCREMENT ,
-  `nombre` VARCHAR(30) NOT NULL , 
-  `apellido` VARCHAR(40) NOT NULL , 
-  `domicilio` TEXT NOT NULL , 
-  `telefono` VARCHAR(20) NULL , 
-  `localidad` VARCHAR(25) NOT NULL , 
-  `dni` FLOAT(10) NOT NULL , 
-  `email` VARCHAR(35) NOT NULL , 
-  PRIMARY KEY (`id`(4))) ENGINE = InnoDB; DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+CREATE TABLE `bd_supermarket`.`cliente` (
+`id` INT(4) NOT NULL AUTO_INCREMENT ,
+ `email` VARCHAR(35) NOT NULL ,
+ `nombre` VARCHAR(30) NOT NULL ,
+ `apellido` VARCHAR(40) NOT NULL ,
+ `dni` FLOAT(10) NULL ,
+ `domicilio` TEXT NOT NULL ,
+ `telefono` VARCHAR(20) NULL ,
+ `localidad` VARCHAR(25) NOT NULL ,
+ PRIMARY KEY (`id`(4),
+ `email`(35))) ENGINE = InnoDB;
+ 
+CREATE TABLE `bd_supermarket`.`usuario` (
+`email` VARCHAR(35) NOT NULL , 
+`clave` VARCHAR(15) NOT NULL , 
+PRIMARY KEY (`email`(35), `clave`(15))) ENGINE = InnoDB;
