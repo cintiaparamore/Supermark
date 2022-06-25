@@ -80,3 +80,15 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-06-20 18:37:43
+
+CREATE TABLE `bd_supermark`.`cliente` (
+  `id` INT(4) NOT NULL AUTO_INCREMENT ,
+  `nombre` VARCHAR(30) NOT NULL , 
+  `apellido` VARCHAR(40) NOT NULL , 
+  `domicilio` TEXT NOT NULL , 
+  `telefono` VARCHAR(20) NULL , 
+  `localidad` VARCHAR(25) NOT NULL , 
+  `dni` FLOAT(10) NOT NULL , 
+  `email` VARCHAR(35) NOT NULL , 
+  PRIMARY KEY (`id`(4))) ENGINE = InnoDB; DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
