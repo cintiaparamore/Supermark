@@ -260,5 +260,3 @@ public class Producto {
 	}
 
 }
-
-	

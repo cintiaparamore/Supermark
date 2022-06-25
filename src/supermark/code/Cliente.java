@@ -15,8 +15,7 @@ public class Cliente {
 	private Integer id;
 	private String nombre;
 	private String apellido;
-	private String domicilio;
-  //Private Domicilio domicilio;
+    private String domicilio;
 	private String telefono;
 	private String localidad;
 	private Long dni;
@@ -134,6 +133,7 @@ public class Cliente {
 
 
 	public void registrarCliente(){
+		
 		Scanner reg = new Scanner(System.in);
 		System.out.println("Ingresar Nombre");
 		nombre = reg.nextLine();

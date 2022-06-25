@@ -11,45 +11,23 @@ public class Factura {
 	private Cliente localidad;
 	private Domicilio domicilio;
 	private Cliente cliente;
-	private Detalle cantidad;
+	private Producto stock;
+	private Producto descripcion;
 	private ArrayList<Detalle> detalles;
-	private Detalle total;
 
-	public Factura(char tipo, Integer id, Date fecha, ArrayList<Detalle> detalles, Cliente localidad, Domicilio domicilio,
-			Cliente cliente, Detalle total) {
+	
+	public Factura(char tipo, Integer id, Date fecha, Cliente localidad, Domicilio domicilio, Cliente cliente,
+			Producto stock, Producto descripcion, ArrayList<Detalle> detalles) {
 		super();
 		this.tipo = tipo;
 		this.id = id;
 		this.fecha = fecha;
-		this.detalles = detalles;
 		this.localidad = localidad;
 		this.domicilio = domicilio;
 		this.cliente = cliente;
-		this.total = total;
-	}
-
-	public ArrayList<Detalle> getDetalles() {
-		return detalles;
-	}
-
-	public void setDetalles(ArrayList<Detalle> detalles) {
+		this.stock = stock;
+		this.descripcion = descripcion;
 		this.detalles = detalles;
-	}
-
-	public Domicilio getDomicilio() {
-		return domicilio;
-	}
-
-	public void setDomicilio(Domicilio domicilio) {
-		this.domicilio = domicilio;
-	}
-
-	public Detalle getTotal() {
-		return total;
-	}
-
-	public void setTotal(Detalle total) {
-		this.total = total;
 	}
 
 	public char getTipo() {
@@ -60,38 +38,102 @@ public class Factura {
 		this.tipo = tipo;
 	}
 
-	public Date getFecha() {
-		return fecha;
-	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public Cliente getLocalidad() {
-		return localidad;
-	}
-
-	public void setLocalidad(Cliente localidad) {
-		this.localidad = localidad;
-	}
 
 	public Integer getId() {
 		return id;
 	}
 
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
+
+
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+
+
+	public Cliente getLocalidad() {
+		return localidad;
+	}
+
+
+
+	public void setLocalidad(Cliente localidad) {
+		this.localidad = localidad;
+	}
+
+
+
+	public Domicilio getDomicilio() {
+		return domicilio;
+	}
+
+
+
+	public void setDomicilio(Domicilio domicilio) {
+		this.domicilio = domicilio;
+	}
+
+
+
 	public Cliente getCliente() {
 		return cliente;
 	}
 
+
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
+
+
+	public Producto getStock() {
+		return stock;
+	}
+
+
+
+	public void setStock(Producto stock) {
+		this.stock = stock;
+	}
+
+
+
+	public Producto getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(Producto descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public ArrayList<Detalle> getDetalles() {
+		return detalles;
+	}
+
+
+
+	public void setDetalles(ArrayList<Detalle> detalles) {
+		this.detalles = detalles;
+	}
+
 
 	public void mostrar() {
 		
@@ -101,9 +143,8 @@ public class Factura {
 		System.out.println("Señor(res): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: " + this.localidad);
-		System.out.println("Cantidad: "+this.cantidad);  
+		System.out.println("Cantidad: "+this.stock);  
 		System.out.println("Detalle: " + this.detalles);
-		System.out.println("Total: " + this.total);
 	}
 
 }
