@@ -80,3 +80,31 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-06-20 18:37:43
+
+CREATE TABLE `bd_supermarket`.`cliente` (
+`id` INT(4) NOT NULL AUTO_INCREMENT ,
+ `email` VARCHAR(35) NOT NULL ,
+ `nombre` VARCHAR(30) NOT NULL ,
+ `apellido` VARCHAR(40) NOT NULL ,
+ `dni` FLOAT(10) NULL ,
+ `domicilio` TEXT NOT NULL ,
+ `telefono` VARCHAR(20) NULL ,
+ `localidad` VARCHAR(25) NOT NULL ,
+ PRIMARY KEY (`id`(4),
+ `email`(35))) ENGINE = InnoDB;
+ 
+CREATE TABLE `bd_supermarket`.`usuario` (
+`email` VARCHAR(35) NOT NULL , 
+`clave` VARCHAR(15) NOT NULL , 
+PRIMARY KEY (`email`(35), `clave`(15))) ENGINE = InnoDB;
+
+CREATE TABLE `bd_supermarket`.`domicilio` (
+`calle1` VARCHAR(30) NOT NULL , 
+`calle2` VARCHAR(30) NULL , 
+`nro_calle` INT(5) NULL , 
+`manzana` VARCHAR(10) NULL , 
+`nro_piso` INT(5) NULL , 
+`nro_dpto` INT(5) NULL , 
+`barrio` VARCHAR(35) NOT NULL , 
+`id` INT(4) NOT NULL AUTO_INCREMENT , 
+PRIMARY KEY (`id`(4))) ENGINE = InnoDB;
