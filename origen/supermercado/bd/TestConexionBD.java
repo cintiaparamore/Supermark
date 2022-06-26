@@ -1,4 +1,4 @@
-package supermark.bd;
+/*package supermark.bd;
 
 	import java.sql.Connection;
 	import java.sql.Date;
@@ -81,4 +81,4 @@ package supermark.bd;
 			return "SELECT * FROM departamento";
 		}
 		
-	}
+	}      */
