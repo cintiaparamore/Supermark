@@ -83,15 +83,13 @@ UNLOCK TABLES;
 
 CREATE TABLE `bd_supermarket`.`cliente` (
 `id` INT(4) NOT NULL AUTO_INCREMENT ,
- `email` VARCHAR(35) NOT NULL ,
  `nombre` VARCHAR(30) NOT NULL ,
  `apellido` VARCHAR(40) NOT NULL ,
  `dni` FLOAT(10) NULL ,
  `domicilio` TEXT NOT NULL ,
  `telefono` VARCHAR(20) NULL ,
  `localidad` VARCHAR(25) NOT NULL ,
- PRIMARY KEY (`id`(4),
- `email`(35))) ENGINE = InnoDB;
+ PRIMARY KEY (`id`(4))) ENGINE = InnoDB;
  
 CREATE TABLE `bd_supermarket`.`usuario` (
 `email` VARCHAR(35) NOT NULL , 
