@@ -7,7 +7,7 @@ package supermark.bd;
 	import java.sql.SQLException;
 	import java.sql.Statement;
 
-	public class TestConexionBD { // 2° metodo para la consulta y extraccion del registro de la base de datos a java
+	public class TestConexionBD { // 2Â° metodo para la consulta y extraccion del registro de la base de datos a java
 		
 		static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 		// org.postgresql.Driver
@@ -15,7 +15,7 @@ package supermark.bd;
 		// jdbc:postgresql://localhost:5432/universidad
 		// Credenciales de la BDD
 		static final String USER = "root";
-		static final String PASS = "blackpink94";
+		static final String PASS = "";
 
 		public static void main(String[] args) {
 			Connection conn = null;
