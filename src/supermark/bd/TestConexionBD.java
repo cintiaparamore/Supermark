@@ -82,6 +82,3 @@ package supermark.bd;
 		}
 		
 	}
-
-
-}
