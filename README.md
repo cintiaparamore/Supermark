@@ -1,7 +1,7 @@
 # Supermark
-"Proyecto Final Java" - 1000 Programadores Salteños
+"Proyecto Final de Introduccion a la programacion en Java" - 1000 Programadores Salteños
 
-                                                         Sistema de Gestión
+                                             Sistema de Gestión
                                                          
 
 Contexto
