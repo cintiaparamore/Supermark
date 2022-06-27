@@ -1,4 +1,4 @@
-package supermark.code;
+package modeloCin;
 
 import java.awt.HeadlessException;
 import java.sql.Connection;

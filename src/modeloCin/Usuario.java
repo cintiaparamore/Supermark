@@ -1,4 +1,4 @@
-package supermark.code;
+package modeloCin;
 
 import java.awt.*;
 import java.sql.Connection;
@@ -7,50 +7,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.Scanner;
-
-public class Usuario {
-	Statement stmt = null;
-	ConexionBDD connection = new ConexionBDD();
-	Connection acceso;
-
-	private String email;
-	private String clave;
 	
-	public Usuario(String email, String clave) {
-		super();
-		this.email = email;
-		this.clave = clave;
+	public class Usuario extends crearCuenta {
+		Statement stmt = null;
+		ConexionBDD connection = new ConexionBDD();
+		Connection acceso;
+		
+	public Usuario(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
+			int dni, int id_crearCuenta, String email, String clave, crearCuenta confirmacionClave) {
+		super(id, nombre, apellido, domicilio, telefono, localidad, dni, id_crearCuenta, email, clave, confirmacionClave);
 	}
 
-	public Usuario(){
-		super();
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getClave() {
-		return clave;
-	}
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
-	
-	public void mostrar() {
-
-		System.out.println("Email: " + this.email);
-		System.out.println("Clave: " + this.clave);
-	}
 
 	public boolean registrarUsuario()  {
 		ResultSet rs;
 		Scanner reg = new Scanner(System.in);
 		System.out.println("Ingrese email");
-		email = reg.nextLine();
+		crearCuenta email = reg.nextLine();
 		System.out.println("Ingrese clave");
-		clave = reg.nextLine();
+		crearCuenta clave = reg.nextLine();
 		String sql = "SELECT * from usuario WHERE email ='"+email+"'";
 		acceso = connection.connect();
 
@@ -76,8 +51,8 @@ public class Usuario {
 	}
 	
 	public boolean verificarUsuario(Usuario user){
-		String email = user.getEmail();
-		String clave = user.getClave();
+		crearCuenta email = user.getEmail();
+		crearCuenta clave = user.getClave();
 		acceso = connection.connect();
 		ResultSet rs;
 		String clavedb="0";
@@ -100,10 +75,11 @@ public class Usuario {
 		}
 		return false;
 	}
-
+	
 	public boolean login(){
 		String email;
 		String clave;
+		
 		System.out.println("Ingrese email");
 		Scanner leer = new Scanner(System.in);
 		email = leer.nextLine();
@@ -115,7 +91,6 @@ public class Usuario {
 			return true;
 		}
 		else return false;
-	
 	/*
 	 * public static void main(String arg[]) { Usuario p1 = new
 	 * Usuario("cintiaparamore", "qwertyasdfzxcvb25"); p1.mostrar();

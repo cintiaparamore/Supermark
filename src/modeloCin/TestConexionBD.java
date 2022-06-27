@@ -1,3 +1,4 @@
+package modeloCin;
 /*package supermark.bd;
 
 	import java.sql.Connection;
@@ -12,7 +13,7 @@
 		static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 		// org.postgresql.Driver
 		static final String DB_URL = "jdbc:mysql://localhost:3306/supermarket";
-		// jdbc:postgresql://localhost:5432/universidad
+		// jdbc:postgresql://localhost:5432/supermarket
 		// Credenciales de la BDD
 		static final String USER = "root";
 		static final String PASS = "";
@@ -39,7 +40,6 @@
 
 				// Probar consultas
 				
-
 				sql = findALL(); // realizar una consulta de sql (base de datos)
 				ResultSet rss = stmt.executeQuery(sql); // Para ejecutar esa consulta y guardar los registro de la bd sql en una variable de java
 
@@ -77,8 +77,24 @@
 		}
 
 		private static String findALL() {
-
+			
+			sql = findALL();   // Tabla Productos
+			ResultSet re =stmt.executeQuery(sql);
+			// 5 extraer datos
+			while (rs.next()) {
+				int codigo = rs.getInt("codigo");
+				String nombre = rs.getString("nombre");
+				String marca = rs.getString("marca");
+				String descripcion = rs.getString("descripcion");
+				double precio = rs.getString("precio");
+				int stock = rs.getInt("stock");
+				int categoria = rs.getInt("categoria");
+				
+				
+				
+			}
+			
 			return "SELECT * FROM departamento";
 		}
 		
-	}      */
+	}     */

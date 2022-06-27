@@ -1,4 +1,4 @@
-package supermark.code;
+package modeloCin;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,14 +15,14 @@ public class Cliente {
 	private Integer id;
 	private String nombre;
 	private String apellido;
-	private String domicilio;
+    private String domicilio;
 	private String telefono;
 	private String localidad;
 	private Long dni;
-	private String email;
+//	private String email;
 
 	public Cliente(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
-			int dni, String email) {
+			int dni) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -31,7 +31,7 @@ public class Cliente {
 		this.telefono = telefono;
 		this.localidad = localidad;
 		this.dni = (long) dni;
-		this.email = email;
+//		this.email = email;
 	}
 
 	public Cliente() {
@@ -108,14 +108,14 @@ public class Cliente {
 	}
 
 
-	public String getEmail() {
-		return email;
-	}
+//	public String getEmail() {
+//		return email;
+//	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
 
 
 	public void mostrar() {
@@ -127,12 +127,12 @@ public class Cliente {
 		System.out.println("Telefono: " + this.telefono);
 		System.out.println("Localidad: "+this.localidad);
 		System.out.println("DNI: " + this.dni);
-		System.out.println("Email: "+this.email);
+//		System.out.println("Email: "+this.email);
 		
 	}
 
-
 	public void registrarCliente(){
+		
 		Scanner reg = new Scanner(System.in);
 		System.out.println("Ingresar Nombre");
 		nombre = reg.nextLine();
@@ -147,9 +147,9 @@ public class Cliente {
 		localidad = reg.nextLine();
 		System.out.println("Ingrese Domicilio");
 		domicilio = reg.nextLine();
-		System.out.println("Ingrese Email");
-		email = reg.nextLine();
-		String sql = "insert into clientes values (null, '"+nombre+"', '"+apellido+"', '"+domicilio+"', '"+telefono+"', '"+localidad+"', '"+dni+"', '"+email+"')";
+//		System.out.println("Ingrese Email");
+//		email = reg.nextLine();
+		String sql = "insert into clientes values (null, '"+nombre+"', '"+apellido+"', '"+domicilio+"', '"+telefono+"', '"+localidad+"', '"+dni+"')";
 		acceso = connection.connect();
 		
 		try {
