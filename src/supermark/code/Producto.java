@@ -7,10 +7,11 @@ import java.sql.Statement;
 public class Producto {
 
 	Statement stmt = null;
-
 	ConexionBDD connection = new ConexionBDD();
 	Connection acceso;
 
+
+	
 	private int codigo;
 	private String nombre;
 	private String marca;
