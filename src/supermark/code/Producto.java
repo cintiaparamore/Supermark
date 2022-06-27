@@ -138,36 +138,104 @@ public class Producto {
 
 	}
 
-	public void modificarNombreProducto(int codmodi, String nommodi) {
-
-		String sql_modi = "UPDATE productos SET nombre ='" + nommodi + "' WHERE codigo = " + codmodi;
-
+public void modificarNombreProducto(int codmodi, String nommodi) {
+		
+		String sql_modi = "UPDATE productos SET nombre ='"+nommodi+"' WHERE codigo = "+codmodi;
+		
 		try {
 			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto "+codmodi+" modificado.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
-		System.out.println("Producto " + codmodi + " modificado.");
-
+		}  
+		
+		
+			
 	}
-
-	public void modificarPrecioProducto(int codmodi, Double preciomodi) {
-
-		String sql_modi = "UPDATE productos SET precio =" + preciomodi + " WHERE codigo = " + codmodi;
-
+	
+    public void modificarMarcaProducto(int codmodi, String marcamodi) {
+		
+		String sql_modi = "UPDATE productos SET marca ='"+marcamodi+"' WHERE codigo = "+codmodi;
+		
 		try {
 			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto "+codmodi+" modificado.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
-		System.out.println("Producto " + codmodi + " modificado.");
-
+		}  
+		
+		
+			
 	}
+    
 
+    public void modificarDescripcionProducto(int codmodi, String descrimodi) {
+		
+ 		String sql_modi = "UPDATE productos SET descripcion ='"+descrimodi+"' WHERE codigo = "+codmodi;
+ 		
+ 		try {
+ 			stmt.executeUpdate(sql_modi);
+ 			System.out.println("Producto "+codmodi+" modificado.");
+ 		} catch (SQLException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}  
+ 		
+ 		
+ 		
+    }  
+    
+     public void modificarPrecioProducto(int codmodi, Double preciomodi) {
+		
+		String sql_modi = "UPDATE productos SET precio ="+preciomodi+" WHERE codigo = "+codmodi;
+		
+		try {
+			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto "+codmodi+" modificado.");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+				 
+    
+     }
+    
+    public void modificarStockProducto(int codmodi, int stockmodi) {
+		
+ 		String sql_modi = "UPDATE productos SET stock ="+stockmodi+" WHERE codigo = "+codmodi;
+ 		
+ 		try {
+ 			stmt.executeUpdate(sql_modi);
+ 			System.out.println("Producto "+codmodi+" modificado.");
+ 		} catch (SQLException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}  
+ 		
+ 		
+ 		
+    }  
+    
+    public void modificarCategoriaProducto(int codmodi, int categmodi) {
+		
+ 		String sql_modi = "UPDATE productos SET categoria ="+categmodi+" WHERE codigo = "+codmodi;
+ 		
+ 		try {
+ 			stmt.executeUpdate(sql_modi);
+ 			System.out.println("Producto "+codmodi+" modificado.");
+ 		} catch (SQLException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}  
+ 		
+ 		
+ 		
+    }  
+    
+    
 	public void eliminarProducto(int codeli) {
 
 		String sql_modi = "DELETE FROM productos WHERE codigo =" + codeli;
