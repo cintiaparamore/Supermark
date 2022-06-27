@@ -1,4 +1,4 @@
-package modeloCin;
+package supermark_cintia;
 /*package supermark.bd;
 
 	import java.sql.Connection;

@@ -1,4 +1,4 @@
-package modeloCin;
+package supermark_cintia;
 
 import java.util.Scanner;
 
