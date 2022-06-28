@@ -8,35 +8,22 @@ public class Cliente {
     private String domicilio;
 	private String telefono;
 	private String localidad;
-	private Long dni;
-//	private String email;
+	private String dni;
 
-	public Cliente(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
-			long dni) {
+
+	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String localidad
+			) {
 		super();
-		this.id = id;
+		
+
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.dni = dni;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
 		this.localidad = localidad;
-		this.dni = dni;
-//		this.email = email;
+	
 	}
-
-	public Cliente() {
-		super();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 
 	public String getNombre() {
 		return nombre;
@@ -56,6 +43,16 @@ public class Cliente {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+	
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
 
 
 	public String getDomicilio() {
@@ -87,15 +84,6 @@ public class Cliente {
 		this.localidad = localidad;
 	}
 
-
-	public Long getDni() {
-		return dni;
-	}
-
-
-	public void setDni(Long dni) {
-		this.dni = dni;
-	}
 
 	public String crearQueryInsert() {
 		return "insert into clientes (fecha,nombre,apellido,dni,domicilio,telefono,localidad) values (Now(),'"+this.nombre+"','"+this.apellido+"','"+this.dni+"','"+this.domicilio+"','"+this.telefono+"','"+this.localidad+"');";

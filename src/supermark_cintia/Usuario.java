@@ -1,15 +1,12 @@
 package supermark_cintia;
 
-public class Usuario extends crearCuenta {
+public class Usuario {
 
 	private String email;
 	private String clave;
 
-	public Usuario(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
-			int dni, int id_crearCuenta, String email, String clave, String confirmacionClave) {
-		super(id, nombre, apellido, domicilio, telefono, localidad, dni, id_crearCuenta, email, clave,
-				confirmacionClave);
 
+	public Usuario(String emailString, String claveString) {
 	}
 
 	public String getEmail() {

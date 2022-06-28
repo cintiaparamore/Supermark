@@ -4,31 +4,22 @@ import java.util.Scanner;
 //import java.util.regex.Matcher;
 //import java.util.regex.Pattern;
 
-public class crearCuenta extends Cliente {
+public class crearCuenta{
+	
 	static Scanner leerScanner = new Scanner (System.in);
 
-	private int id_crearCuenta;
 	private String email;
 	private String clave;
 	private String confirmacionClave;
 
-	public crearCuenta(Integer id, String nombre, String apellido, String domicilio, String telefono, String localidad,
-			int dni, int id_crearCuenta, String email, String clave, String confirmacionClave) {
-		super(id, nombre, apellido, domicilio, telefono, localidad, dni);
 
-		this.id_crearCuenta = id_crearCuenta;
+	public crearCuenta( String email, String clave, String confirmacionClave) {
+		
 		this.email = email;
 		this.clave = clave;
 		this.confirmacionClave = confirmacionClave;
 	}
 
-	public int getId_crearCuenta() {
-		return id_crearCuenta;
-	}
-
-	public void setId_crearCuenta(int id_crearCuenta) {
-		this.id_crearCuenta = id_crearCuenta;
-	}
 
 	public String getEmail() {
 		return email;
@@ -83,10 +74,10 @@ public class crearCuenta extends Cliente {
 			System.out.println("Correo No Válido");
 			System.out.println("Contraseña No Válida");
 		}
-	}
+	}*/
 
 	public String crearQueryInsert() {
 		return "insert into crear_cuentas (email,clave,confirmClave) values ('" + this.email + "','" + this.clave
 				+ "','" + this.confirmacionClave + "');";
-	}  */
+	}  
 }
