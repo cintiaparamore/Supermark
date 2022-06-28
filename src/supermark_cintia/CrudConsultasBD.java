@@ -11,6 +11,7 @@ public class CrudConsultasBD {
 	private String DB_URL;
 	private String USER;
 	private String PASS;
+	
 	private Connection connection;
 	private Statement stmt;
 	private ResultSet rs;
@@ -27,7 +28,7 @@ public class CrudConsultasBD {
 	}
 	
 	public boolean conectar() {
-		boolean rta=true;
+		boolean rpta=true;
 		
 		try {
 			Class.forName(this.JDBC_DRIVER);
@@ -41,10 +42,10 @@ public class CrudConsultasBD {
 			this.stmt=this.connection.createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			rta=false;
+			rpta=false;
 		}
 		
-		return rta;
+		return rpta;
 	}
 	
 	public String select(String query) {
@@ -63,28 +64,56 @@ public class CrudConsultasBD {
 	}
 	
 	public boolean insert(String query) {
-		boolean rta=true;
+		boolean rpta=true;
 		
 		try {
 			this.stmt.executeUpdate(query);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			rta=false;
+			rpta=false;
 		}
 		
-		return rta;
+		return rpta;
+		
+	}
+	
+	public boolean update(String query) {
+		boolean rpta=true;
+		
+		try {
+			this.stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			rpta=false;
+		}
+		
+		return rpta;
+		
+	}
+	
+	public boolean delete(String query) {
+		boolean rpta=true;
+		
+		try {
+			this.stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			rpta=false;
+		}
+		
+		return rpta;
 		
 	}
 
 	public boolean cerrar() {
-		boolean rta=true;
+		boolean rpta=true;
 		try {
 			if(this.stmt!=null) {
 				stmt.close();
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			rta=false;
+			rpta=false;
 		}
 		
 			try {
@@ -93,7 +122,7 @@ public class CrudConsultasBD {
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				rta=false;
+				rpta=false;
 			}
 
 			
@@ -103,11 +132,11 @@ public class CrudConsultasBD {
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
-					rta=false;
+					rpta=false;
 				}
 			
 		
-		return rta;
+		return rpta;
 	}
 	
 	public String getJDBC_DRIVER() {
@@ -165,7 +194,5 @@ public class CrudConsultasBD {
 	public void setRs(ResultSet rs) {
 		this.rs = rs;
 	}
-	
-
 
 }
