@@ -6,7 +6,10 @@ public class Usuario {
 	private String clave;
 
 
-	public Usuario(String emailString, String claveString) {
+	public Usuario(String email, String clave) {
+		
+		this.email = email;
+		this.clave = clave;
 	}
 
 	public String getEmail() {
@@ -26,7 +29,6 @@ public class Usuario {
 	}
 
 	public String crearQueryInsert() {
-		return "insert into usuarios (email,clave,confirmClave) values ('" + this.email + "','" + this.clave
-				+ "');";
+		return "insert into usuarios (email,clave) values ('" + this.email + "','" + this.clave+ "');";
 	}
 }

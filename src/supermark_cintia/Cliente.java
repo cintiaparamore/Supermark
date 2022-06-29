@@ -2,16 +2,17 @@ package supermark_cintia;
 
 public class Cliente {
 
-	private Integer id;
 	private String nombre;
 	private String apellido;
+	private String dni;
     private String domicilio;
 	private String telefono;
+	private String celular;
 	private String localidad;
-	private String dni;
+	
 
 
-	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String localidad
+	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String celular, String localidad
 			) {
 		super();
 		
@@ -21,6 +22,7 @@ public class Cliente {
 		this.dni = dni;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
+		this.celular = celular;
 		this.localidad = localidad;
 	
 	}
@@ -73,7 +75,15 @@ public class Cliente {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	
+	public String getCelular() {
+		return celular;
+	}
 
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
 
 	public String getLocalidad() {
 		return localidad;
@@ -86,7 +96,7 @@ public class Cliente {
 
 
 	public String crearQueryInsert() {
-		return "insert into clientes (fecha,nombre,apellido,dni,domicilio,telefono,localidad) values (Now(),'"+this.nombre+"','"+this.apellido+"','"+this.dni+"','"+this.domicilio+"','"+this.telefono+"','"+this.localidad+"');";
+		return "insert into clientes (fecha,nombre,apellido,dni,domicilio,telefono,celular,localidad) values (Now(),'"+this.nombre+"','"+this.apellido+"','"+this.dni+"','"+this.domicilio+"','"+this.telefono+"','"+this.celular+"','"+this.localidad+"');";
 	}
 
 

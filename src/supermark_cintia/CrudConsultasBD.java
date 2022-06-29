@@ -43,6 +43,7 @@ public class CrudConsultasBD {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			rpta=false;
+			System.out.println(e.getMessage());
 		}
 		
 		return rpta;
@@ -135,7 +136,6 @@ public class CrudConsultasBD {
 					rpta=false;
 				}
 			
-		
 		return rpta;
 	}
 	

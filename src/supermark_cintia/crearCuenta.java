@@ -76,8 +76,4 @@ public class crearCuenta{
 		}
 	}*/
 
-	public String crearQueryInsert() {
-		return "insert into crear_cuentas (email,clave,confirmClave) values ('" + this.email + "','" + this.clave
-				+ "','" + this.confirmacionClave + "');";
-	}  
 }

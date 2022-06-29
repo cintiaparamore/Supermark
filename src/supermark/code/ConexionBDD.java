@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class ConexionBDD {
 
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/supermarket";
+	static final String DB_URL = "jdbc:mysql://localhost:3306/bd_supermarket";
 	static final String USER = "root";
 	static final String PASS = "blackpink94";
 
