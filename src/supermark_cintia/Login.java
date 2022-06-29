@@ -2,7 +2,7 @@ package supermark_cintia;
 
 import java.util.Scanner;
 
-public class Loguin {
+public class Login {
 	public boolean loguearme() {
 		
 		String emailString;
@@ -17,7 +17,7 @@ public class Loguin {
 		emailString=leerScanner.nextLine();
 		System.out.println("");
 		
-		System.out.println("Contraseña: ");
+		System.out.println("ContraseÃ±a: ");
 		claveString=leerScanner.nextLine();
 		
 		CrudConsultasBD crudbd = new CrudConsultasBD("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/supermarket", "root", "blackpink94");
