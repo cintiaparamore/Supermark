@@ -11,7 +11,7 @@ public class Producto {
 //	ConexionBDD connection = new ConexionBDD();
 	Connection acceso;
 
-	private int codigo;
+	private int id;
 	private String nombre;
 	private String marca;
 	private String descripcion;
@@ -19,11 +19,11 @@ public class Producto {
 	private Integer stock;
 	private String categoria;
 
-	public Producto(int codigo, String nombre, String marca, String descripcion, Double precio, Integer stock,
+	public Producto(int id, String nombre, String marca, String descripcion, Double precio, Integer stock,
 			String categoria) {
 		
 		super();
-		this.codigo = codigo;
+		this.id = id;
 		this.nombre = nombre;
 		this.marca = marca;
 		this.descripcion = descripcion;
@@ -36,12 +36,12 @@ public class Producto {
 		super();
 	}
 
-	public Integer getcodigo() {
-		return codigo;
+	public Integer getid() {
+		return id;
 	}
 
-	public void setcodigo(Integer codigo) {
-		this.codigo = codigo;
+	public void setid(Integer id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -94,7 +94,7 @@ public class Producto {
 
 	public void mostrar() {
 
-		System.out.println("Codigo: " + this.codigo);
+		System.out.println("ID: " + this.id);
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Descripcion: " + this.descripcion);
@@ -200,13 +200,13 @@ public class Producto {
 
 			while (rs.next()) {
 				
-				int codigo = rs.getInt("codigo");
+				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
 				String marca = rs.getString("marca");
 				String descripcion = rs.getString("descripcion");
 				Double precio = rs.getDouble("precio");
 
-				System.out.print("Codigo: " + codigo + " | ");
+				System.out.print("ID: " + id + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
 				System.out.print("Descripcion: " + descripcion + " | ");
@@ -242,13 +242,13 @@ public class Producto {
 
 			rs = stmt.executeQuery(sql);
 			rs.next();
-			int codigo = rs.getInt("codigo");
+			int id = rs.getInt("id");
 			String nombre = rs.getString("nombre");
 			String marca = rs.getString("marca");
 			String descripcion = rs.getString("descripcion");
 			Double precio = rs.getDouble("precio");
 
-			System.out.print("Codigo: " + codigo + " | ");
+			System.out.print("ID: " + id + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
 			System.out.print("Descripcion: " + descripcion + " | ");
