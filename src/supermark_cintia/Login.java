@@ -26,8 +26,8 @@ public class Login {
 		if(crudbd.conectar()==false) {
 			System.out.println("Error en la conexion");
 		}else {
-			registro = crudbd.select("select clave from usuarios where email="+emailString+"';");
-			
+			registro = crudbd.select("select clave from clientes where email='"+emailString+"';");
+			System.out.println(registro);
 			if(registro.equals("")) {
 				System.out.println("El Usuario "+emailString+" no se encuentra registrado. Por favor vuelva al menu principal y seleccione **Registrarme**");
 			}
@@ -36,7 +36,8 @@ public class Login {
 				System.out.println(registro);
 				
 				if(registro.equals(claveString)) {
-					System.out.println("Bienvenido a Supermark");
+					System.out.println("");
+					System.out.println("¡Bienvenido a Supermark!");
 					
 				} else System.out.println("¡Error! La clave no corresponde al usuario: "+emailString);
 			}

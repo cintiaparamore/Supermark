@@ -80,7 +80,7 @@ public class CrudConsultasBD {
 
 				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 					
-					System.out.println("Tipo:" + rsmd.getColumnType(i));
+				//	System.out.println("Tipo:" + rsmd.getColumnType(i));
 
 					switch (rsmd.getColumnType(i)) {
 					case 12: // VARCHAR
@@ -93,7 +93,7 @@ public class CrudConsultasBD {
 						string = string + this.rs.getDate(i).toString();
 						break;
 					default: // Por defecto.....
-						System.out.println("Tipo:" + rsmd.getColumnType(i));
+					//	System.out.println("Tipo:" + rsmd.getColumnType(i));
 					}
 					if (i > rsmd.getColumnCount()) {
 						string = string + ";";

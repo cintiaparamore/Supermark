@@ -19,7 +19,6 @@ public class Registro {
 		
 		String emailString;
 		String claveString;
-		String confirmacionClaveString;
 		
 		Scanner leerScanner = new Scanner (System.in);
 		
@@ -61,24 +60,19 @@ public class Registro {
 		System.out.println("Clave:");
 		claveString = leerScanner.nextLine();	
 		System.out.println();
-		
-		System.out.println("Confirmacion Clave:");
-		confirmacionClaveString = leerScanner.nextLine();	
-		System.out.println();
+
 	
-		if(validacionDeCampos(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString, emailString, claveString, confirmacionClaveString)) {
+		if(validacionDeCampos(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString, emailString, claveString)) {
 			
 			CrudConsultasBD crudbd = new CrudConsultasBD("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/bd_supermarket", "root", "blackpink94");
+			
 			if (crudbd.conectar()) {
-				String resultadoString = crudbd.select("select email from usuarios where email="+emailString+"';");
+				String resultadoString = crudbd.select("select email from clientes where email='"+emailString+"';");
+				
 				if(resultadoString.equals("")) {
-					Cliente nuevocliente = new Cliente(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString);
-					Usuario usuario = new Usuario(emailString, claveString);
+					Cliente nuevocliente = new Cliente(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString, emailString, claveString);
 					
 					if (crudbd.insert(nuevocliente.crearQueryInsert())) {
-
-						crudbd.insert(usuario.crearQueryInsert());
-
 						System.out.println("¡Usuario Registrado!. Ya eres parte de la familia de Supermark.");
 						System.out.println("Ingrese nuevamente con su email");
 						crudbd.cerrar();
@@ -95,7 +89,7 @@ public class Registro {
 	
 	//VALIDAR CAMPOS
 	
-	private boolean validacionDeCampos(String nombreString,String apellidoString,String dniString,String domicilioString,String telefonoString, String celularString, String localidadString,String emailString,String claveString,String confirmacionClaveString) {
+	private boolean validacionDeCampos(String nombreString,String apellidoString,String dniString,String domicilioString,String telefonoString, String celularString, String localidadString,String emailString,String claveString) {
 		boolean rpta=true;
 		
 		if(nombreString.equals("")) {
