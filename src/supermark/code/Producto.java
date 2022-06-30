@@ -1,4 +1,5 @@
 package supermark.code;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +8,6 @@ import java.sql.Statement;
 public class Producto {
 
 	Statement stmt = null;
-
 	ConexionBDD connection = new ConexionBDD();
 	Connection acceso;
 
@@ -21,7 +21,6 @@ public class Producto {
 
 	public Producto(int codigo, String nombre, String marca, String descripcion, Double precio, Integer stock,
 			String categoria) {
-		
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -94,7 +93,7 @@ public class Producto {
 
 	public void mostrar() {
 
-		System.out.println("Codigo: " + this.codigo);
+		System.out.println("C�digo: " + this.codigo);
 		System.out.println("Nombre: " + this.nombre);
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Descripcion: " + this.descripcion);
@@ -144,12 +143,39 @@ public class Producto {
 
 		try {
 			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		System.out.println("Producto " + codmodi + " modificado.");
+	}
+
+	public void modificarMarcaProducto(int codmodi, String marcamodi) {
+
+		String sql_modi = "UPDATE productos SET marca ='" + marcamodi + "' WHERE codigo = " + codmodi;
+
+		try {
+			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void modificarDescripcionProducto(int codmodi, String descrimodi) {
+
+		String sql_modi = "UPDATE productos SET descripcion ='" + descrimodi + "' WHERE codigo = " + codmodi;
+
+		try {
+			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -159,12 +185,40 @@ public class Producto {
 
 		try {
 			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		System.out.println("Producto " + codmodi + " modificado.");
+	}
+
+	public void modificarStockProducto(int codmodi, int stockmodi) {
+
+		String sql_modi = "UPDATE productos SET stock =" + stockmodi + " WHERE codigo = " + codmodi;
+
+		try {
+			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void modificarCategoriaProducto(int codmodi, int categmodi) {
+
+		String sql_modi = "UPDATE productos SET categoria =" + categmodi + " WHERE codigo = " + codmodi;
+
+		try {
+			stmt.executeUpdate(sql_modi);
+			System.out.println("Producto " + codmodi + " modificado.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -199,27 +253,26 @@ public class Producto {
 			int c = 0;
 
 			while (rs.next()) {
-				
 				int codigo = rs.getInt("codigo");
 				String nombre = rs.getString("nombre");
 				String marca = rs.getString("marca");
 				String descripcion = rs.getString("descripcion");
 				Double precio = rs.getDouble("precio");
 
-				System.out.print("Codigo: " + codigo + " | ");
+				System.out.print("C�digo: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
-				System.out.print("Descripcion: " + descripcion + " | ");
+				System.out.print("Descripci�n: " + descripcion + " | ");
 				System.out.println("Precio: " + precio);
 				c++;
 			}
 
 			System.out.println("Cantidad de Productos: " + c);
 
-		} catch (SQLException e) {
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			System.out.println("Error al conectarse a la Base de Datos.");
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 	}
 
@@ -232,9 +285,9 @@ public class Producto {
 		acceso = connection.connect();
 		try {
 			stmt = acceso.createStatement();
-		} catch (SQLException e) {
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 
 		try {
@@ -248,10 +301,10 @@ public class Producto {
 			String descripcion = rs.getString("descripcion");
 			Double precio = rs.getDouble("precio");
 
-			System.out.print("Codigo: " + codigo + " | ");
+			System.out.print("C�digo: " + codigo + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
-			System.out.print("Descripcion: " + descripcion + " | ");
+			System.out.print("Descripci�n: " + descripcion + " | ");
 			System.out.println("Precio: " + precio);
 
 		} catch (SQLException e) {
