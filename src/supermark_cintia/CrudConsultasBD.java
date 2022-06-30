@@ -2,6 +2,7 @@ package supermark_cintia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -22,6 +23,7 @@ public class CrudConsultasBD {
 		DB_URL = dB_URL;
 		USER = uSER;
 		PASS = pASS;
+		
 		this.connection=null;
 		this.stmt=null;
 		this.rs=null;
@@ -33,35 +35,21 @@ public class CrudConsultasBD {
 		try {
 			Class.forName(this.JDBC_DRIVER);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			e.printStackTrace();
+			rpta=false;
 		}
 		
 		try {
 			connection=DriverManager.getConnection(DB_URL,USER,PASS);
 			this.stmt=this.connection.createStatement();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			rpta=false;
 			System.out.println(e.getMessage());
+			rpta=false;
+		
 		}
 		
 		return rpta;
-	}
-	
-	public String select(String query) {
-		
-		String string="";
-		
-		try {
-			this.rs=this.stmt.executeQuery(query);
-			string=rs.getCursorName();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			string="";
-		}
-		
-		return string;
 	}
 	
 	public boolean insert(String query) {
@@ -70,12 +58,57 @@ public class CrudConsultasBD {
 		try {
 			this.stmt.executeUpdate(query);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			rpta=false;
 		}
 		
 		return rpta;
 		
+	}
+	
+	public String select(String query) {
+		
+		String string="";
+		ResultSetMetaData rsmd;
+		
+		try {
+			this.rs = this.stmt.executeQuery(query);
+			// string=rs.getCursorName();
+			rsmd = this.rs.getMetaData();
+
+			while (rs.next()) { // Registros
+
+				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+					
+					System.out.println("Tipo:" + rsmd.getColumnType(i));
+
+					switch (rsmd.getColumnType(i)) {
+					case 12: // VARCHAR
+						string = string + this.rs.getString(i);
+						break;
+					case 4: // INTEGER
+						string = string + this.rs.getInt(i);
+						break;
+					case 93: // DATE
+						string = string + this.rs.getDate(i).toString();
+						break;
+					default: // Por defecto.....
+						System.out.println("Tipo:" + rsmd.getColumnType(i));
+					}
+					if (i > rsmd.getColumnCount()) {
+						string = string + ";";
+					}
+
+				}
+				string = string + ";";
+			}
+
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			string="";
+		}
+		
+		return string;
 	}
 	
 	public boolean update(String query) {
@@ -84,7 +117,7 @@ public class CrudConsultasBD {
 		try {
 			this.stmt.executeUpdate(query);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			rpta=false;
 		}
 		
@@ -98,7 +131,7 @@ public class CrudConsultasBD {
 		try {
 			this.stmt.executeUpdate(query);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			rpta=false;
 		}
 		
@@ -113,7 +146,7 @@ public class CrudConsultasBD {
 				stmt.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			rpta=false;
 		}
 		
@@ -122,7 +155,7 @@ public class CrudConsultasBD {
 				connection.close();
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
 				rpta=false;
 			}
 
@@ -132,7 +165,7 @@ public class CrudConsultasBD {
 						this.rs.close();
 					}
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+					System.out.println(e.getMessage());
 					rpta=false;
 				}
 			

@@ -8,11 +8,15 @@ public class Menu {
 	public static void main(String[] args) {
 
 		System.out.println("**********¡Bienvenido a Supermark!**********");
-		System.out.println("Por favor ingrese una opcion: ");
+		System.out.println("");
+		System.out.println("Por favor ingrese una opcion: *");
+		System.out.println("_______________________________");
+		System.out.println("");
 
 		switch (menu()) {
 		case 1:
-			System.out.println("Iniciando sesion");
+			Login login = new Login();
+			login.loguearme();
 			break;
 
 		case 2:
@@ -34,9 +38,12 @@ public class Menu {
 		Scanner leer= new Scanner(System.in);
 
 		do {
-			System.out.println("1. Iniciar Sesion");
-			System.out.println("2. Registrarme");
-			System.out.println("0. Salir");
+			
+			System.out.println("1. Iniciar Sesion *");
+			System.out.println("2. Registrarme *");
+			System.out.println("0. Salir *");
+			System.out.println("_______________________________");
+			System.out.println("");
 
 			rpta = leer.nextInt();
 

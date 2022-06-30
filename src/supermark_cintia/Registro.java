@@ -24,7 +24,7 @@ public class Registro {
 		Scanner leerScanner = new Scanner (System.in);
 		
 		System.out.println("**********Formulario de Registro**********");
-		System.out.println("**Campo Obligatorio: **");
+		System.out.println("** Campo Obligatorio: **");
 		
 		System.out.println("Nombre:");
 		nombreString = leerScanner.nextLine();	
@@ -70,22 +70,18 @@ public class Registro {
 			
 			CrudConsultasBD crudbd = new CrudConsultasBD("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/bd_supermarket", "root", "blackpink94");
 			if (crudbd.conectar()) {
-				String resultadoString = crudbd.select("select email from usuarios where email="+emailString);
-				if(resultadoString.equalsIgnoreCase("")) {
+				String resultadoString = crudbd.select("select email from usuarios where email="+emailString+"';'");
+				if(resultadoString.equals("")) {
 					Cliente nuevocliente = new Cliente(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString);
-	//				crearCuenta crearcuenta = new crearCuenta(emailString, claveString, confirmacionClaveString);
 					Usuario usuario = new Usuario(emailString, claveString);
 					
-					
-					if(crudbd.insert(nuevocliente.crearQueryInsert())) {
-						
-						crudbd.insert(usuario.crearQueryInsert());{
-						}
-						
+					if (crudbd.insert(nuevocliente.crearQueryInsert())) {
+
+						crudbd.insert(usuario.crearQueryInsert());
+
 						System.out.println("¡Usuario Registrado!. Ya eres parte de la familia de Supermark.");
 						System.out.println("Ingrese nuevamente con su email");
 						crudbd.cerrar();
-						
 					}
 					
 					else System.out.println("Error al registrarse. Por favor vuelva intentar mas tarde.");
@@ -102,7 +98,7 @@ public class Registro {
 	private boolean validacionDeCampos(String nombreString,String apellidoString,String dniString,String domicilioString,String telefonoString, String celularString, String localidadString,String emailString,String claveString,String confirmacionClaveString) {
 		boolean rpta=true;
 		
-		if(nombreString.equalsIgnoreCase("")) {
+		if(nombreString.equals("")) {
 			rpta=false;
 			return rpta;
 		}

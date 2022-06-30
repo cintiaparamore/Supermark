@@ -12,10 +12,7 @@ public class Cliente {
 	
 
 
-	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String celular, String localidad
-			) {
-		super();
-		
+	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String celular, String localidad) {
 
 		this.nombre = nombre;
 		this.apellido = apellido;

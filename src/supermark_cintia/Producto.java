@@ -1,4 +1,4 @@
-package supermark.code;
+package supermark_cintia;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
