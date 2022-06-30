@@ -70,7 +70,7 @@ public class Registro {
 			
 			CrudConsultasBD crudbd = new CrudConsultasBD("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3306/bd_supermarket", "root", "blackpink94");
 			if (crudbd.conectar()) {
-				String resultadoString = crudbd.select("select email from usuarios where email="+emailString+"';'");
+				String resultadoString = crudbd.select("select email from usuarios where email="+emailString+"';");
 				if(resultadoString.equals("")) {
 					Cliente nuevocliente = new Cliente(nombreString, apellidoString, dniString, domicilioString, telefonoString, celularString, localidadString);
 					Usuario usuario = new Usuario(emailString, claveString);

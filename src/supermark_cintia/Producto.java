@@ -8,7 +8,7 @@ public class Producto {
 
 	Statement stmt = null;
 
-	ConexionBDD connection = new ConexionBDD();
+//	ConexionBDD connection = new ConexionBDD();
 	Connection acceso;
 
 	private int codigo;
@@ -106,7 +106,7 @@ public class Producto {
 	public void agregarProducto(String nombre, String marca, String descripcion, Double precio, int stock,
 			int categoria) {
 
-		acceso = connection.connect();
+//		acceso = connection.connect();
 
 		try {
 			stmt = acceso.createStatement();
@@ -191,7 +191,7 @@ public class Producto {
 
 			String sql = "Select * from productos";
 
-			acceso = connection.connect();
+//			acceso = connection.connect();
 			stmt = acceso.createStatement();
 
 			ResultSet rs = stmt.executeQuery(sql);
@@ -229,7 +229,7 @@ public class Producto {
 
 		String sql = "SELECT * FROM productos WHERE codigo=" + codigoBuscado;
 
-		acceso = connection.connect();
+//		acceso = connection.connect();
 		try {
 			stmt = acceso.createStatement();
 		} catch (SQLException e) {

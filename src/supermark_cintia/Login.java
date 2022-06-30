@@ -26,10 +26,10 @@ public class Login {
 		if(crudbd.conectar()==false) {
 			System.out.println("Error en la conexion");
 		}else {
-			registro = crudbd.select("select clave from usuarios where email"+emailString+";");
+			registro = crudbd.select("select clave from usuarios where email="+emailString+"';");
 			
 			if(registro.equals("")) {
-				System.out.println("El usuario: "+emailString+" no se encuentra registrado. Por favor vuelva al menu principal y seleccione **Registrarme**");
+				System.out.println("El Usuario "+emailString+" no se encuentra registrado. Por favor vuelva al menu principal y seleccione **Registrarme**");
 			}
 			else {
 				registro=registro.substring(0, registro.length()-1);
