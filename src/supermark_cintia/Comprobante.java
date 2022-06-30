@@ -137,8 +137,8 @@ public class Comprobante {
 
 	public void mostrar() {
 		
-		System.out.println("Tipo de Factura: " + this.tipo);
-		System.out.println("Nro de Factura: "+this.id);
+		System.out.println("Tipo de Comprobante: " + this.tipo);
+		System.out.println("Nro de Comprobante: "+this.id);
 		System.out.println("Fecha: " + this.fecha);
 		System.out.println("Señor(res): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
