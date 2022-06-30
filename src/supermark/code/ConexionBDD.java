@@ -12,7 +12,7 @@ public class ConexionBDD {
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/bd_supermarket";
 	static final String USER = "root";
-	static final String PASS = "blackpink94";
+	static final String PASS = "";
 
 	private	Connection connection = null;
 	private	Statement stmt = null;
@@ -28,7 +28,7 @@ public class ConexionBDD {
 		}
 
 		try {
-			// System.out.println("Conect·ndose a la Base de Datos...");
+			// System.out.println("Conect√°ndose a la Base de Datos...");
 			connection = DriverManager.getConnection(DB_URL, USER, PASS);
 
 			/*
