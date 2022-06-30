@@ -28,7 +28,7 @@ public class ConexionBDD {
 		}
 
 		try {
-			// System.out.println("Conect·ndose a la Base de Datos...");
+			// System.out.println("Conect√°ndose a la Base de Datos...");
 			connection = DriverManager.getConnection(DB_URL, USER, PASS);
 
 			/*
