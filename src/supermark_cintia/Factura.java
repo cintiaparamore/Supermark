@@ -3,7 +3,7 @@ package supermark_cintia;
 import java.sql.Date;
 import java.util.ArrayList;
 
-public class Factura {
+public class Comprobante {
 
 	private char tipo;
 	private Integer id;
@@ -16,7 +16,7 @@ public class Factura {
 	private ArrayList<Detalle> detalles;
 
 	
-	public Factura(char tipo, Integer id, Date fecha, Cliente localidad, Domicilio domicilio, Cliente cliente,
+	public Comprobante(char tipo, Integer id, Date fecha, Cliente localidad, Domicilio domicilio, Cliente cliente,
 			Producto stock, Producto descripcion, ArrayList<Detalle> detalles) {
 		super();
 		this.tipo = tipo;
@@ -140,7 +140,7 @@ public class Factura {
 		System.out.println("Tipo de Factura: " + this.tipo);
 		System.out.println("Nro de Factura: "+this.id);
 		System.out.println("Fecha: " + this.fecha);
-		System.out.println("Señor(res): " + this.cliente);
+		System.out.println("SeÃ±or(res): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: " + this.localidad);
 		System.out.println("Cantidad: "+this.stock);  
