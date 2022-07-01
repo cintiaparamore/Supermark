@@ -9,14 +9,14 @@ public class Comprobante {
 	private Integer id;
 	private Date fecha;
 	private Cliente localidad;
-	private Domicilio domicilio;
+	private Cliente domicilio;
 	private Cliente cliente;
 	private Producto stock;
 	private Producto descripcion;
 	private ArrayList<Detalle> detalles;
 
 	
-	public Comprobante(char tipo, Integer id, Date fecha, Cliente localidad, Domicilio domicilio, Cliente cliente,
+	public Comprobante(char tipo, Integer id, Date fecha, Cliente localidad, Cliente domicilio, Cliente cliente,
 			Producto stock, Producto descripcion, ArrayList<Detalle> detalles) {
 		super();
 		this.tipo = tipo;
@@ -74,19 +74,13 @@ public class Comprobante {
 		this.localidad = localidad;
 	}
 
-
-
-	public Domicilio getDomicilio() {
+	public Cliente getDomicilio() {
 		return domicilio;
 	}
 
-
-
-	public void setDomicilio(Domicilio domicilio) {
+	public void setDomicilio(Cliente domicilio) {
 		this.domicilio = domicilio;
 	}
-
-
 
 	public Cliente getCliente() {
 		return cliente;
@@ -140,7 +134,7 @@ public class Comprobante {
 		System.out.println("Tipo de Comprobante: " + this.tipo);
 		System.out.println("Nro de Comprobante: "+this.id);
 		System.out.println("Fecha: " + this.fecha);
-		System.out.println("Señor(res): " + this.cliente);
+		System.out.println("Cliente(es): " + this.cliente);
 		System.out.println("Domicilio: " + this.domicilio);
 		System.out.println("Localidad: " + this.localidad);
 		System.out.println("Cantidad: "+this.stock);  
