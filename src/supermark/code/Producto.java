@@ -205,10 +205,10 @@ public class Producto {
 				String descripcion = rs.getString("descripcion");
 				Double precio = rs.getDouble("precio");
 
-				System.out.print("C�digo: " + codigo + " | ");
+				System.out.print("Codigo: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
-				System.out.print("Descripci�n: " + descripcion + " | ");
+				System.out.print("Descripcion: " + descripcion + " | ");
 				System.out.println("Precio: " + precio);
 				c++;
 			}
@@ -250,7 +250,7 @@ public class Producto {
 			System.out.print("Codigo: " + codigo + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
-			System.out.print("Descripci�n: " + descripcion + " | ");
+			System.out.print("Descripcion: " + descripcion + " | ");
 			System.out.println("Precio: " + precio);
 
 		} catch (SQLException e) {

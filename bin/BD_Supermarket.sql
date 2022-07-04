@@ -1,3 +1,9 @@
+use bd_supermarket;
+DROP TABLE `categoria`;
+DROP TABLE `productos`;
+DROP TABLE `detalles`;
+DROP TABLE `comprobantes`;
+DROP TABLE `categoria`;
 
 CREATE TABLE `categoria` (
   `idcategoria` int NOT NULL AUTO_INCREMENT,
@@ -5,9 +11,14 @@ CREATE TABLE `categoria` (
   PRIMARY KEY (`idcategoria`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
 LOCK TABLES `categoria` WRITE;
+
 INSERT INTO `categoria` VALUES (1,'Alimentos'),(2,'Bebidas'),(3,'Limpieza');
+
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `productos`;
 
 CREATE TABLE `productos` (
   `codigo` int unsigned NOT NULL AUTO_INCREMENT,
@@ -40,25 +51,8 @@ email VARCHAR(35) NOT NULL ,
 clave VARCHAR(15) NOT NULL ,
 primary key (id, email)
  );
-
-CREATE TABLE `bd_supermarket`.`domicilio` (
-`calle1` VARCHAR(30) NOT NULL , 
-`calle2` VARCHAR(30) NULL , 
-`nro_calle` INT(5) NULL , 
-`manzana` VARCHAR(10) NULL , 
-`nro_piso` INT(5) NULL , 
-`nro_dpto` INT(5) NULL , 
-`barrio` VARCHAR(35) NOT NULL , 
-`id` INT(4) NOT NULL AUTO_INCREMENT , 
-PRIMARY KEY (`id`(4))) ENGINE = InnoDB;
-
-CREATE TABLE `descuento` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `porcentaje` float DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE `comprobantes` (
+ 
+ CREATE TABLE `comprobantes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(1) DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT NULL,
@@ -79,8 +73,3 @@ CREATE TABLE `detalles` (
   CONSTRAINT `comprobante_fk` FOREIGN KEY (`id_comprobante`) REFERENCES `comprobantes` (`id`),
   CONSTRAINT `producto_fk` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-
-DROP TABLE `clientes`;
-DROP TABLE `descuento`;
-DROP TABLE `comprobantes`;
-DROP TABLE `detalles`;

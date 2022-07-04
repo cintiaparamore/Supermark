@@ -1,29 +1,41 @@
 use bd_supermarket;
-
-CREATE TABLE `descuento` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `porcentaje` float DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+DROP TABLE `categoria`;
+DROP TABLE `productos`;
+DROP TABLE `detalles`;
+DROP TABLE `comprobantes`;
+DROP TABLE `categoria`;
 
 CREATE TABLE `categoria` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `idcategoria` int NOT NULL AUTO_INCREMENT,
   `nombrecate` varchar(45) DEFAULT NULL,
-  `id_descuento` int NOT NULL,
-  PRIMARY KEY (`id`)
- ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 LOCK TABLES `categoria` WRITE;
-INSERT INTO `bd_supermarket`.`categoria` (`id`, `nombrecate`, `id_descuento`) VALUES ('1', 'Alimentos', '1');
-INSERT INTO `bd_supermarket`.`categoria` (`id`, `nombrecate`, `id_descuento`) VALUES ('2', 'Bebidas', '2');
-INSERT INTO `bd_supermarket`.`categoria` (`id`, `nombrecate`, `id_descuento`) VALUES ('3', 'Limpieza', '3');
+
+INSERT INTO `categoria` VALUES (1,'Alimentos'),(2,'Bebidas'),(3,'Limpieza');
+
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `productos`;
+
+CREATE TABLE `productos` (
+  `codigo` int unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `marca` varchar(25) DEFAULT NULL,
+  `descripcion` varchar(50) DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  `stock` int DEFAULT NULL,
+  `categoria` int DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `categoria_idx` (`categoria`),
+  CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`idcategoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `productos` WRITE;
 INSERT INTO `productos` VALUES (1,'Gaseosa','Coca Cola','2.25 litros',280,100,2),(2,'Gaseosa','Sprite','2.25 litros',260,80,2),(3,'Arroz','Gallo','1 kg',190,90,1),(4,'Fideo','Lucchetti','1 kg',80,70,1),(5,'Aceite','Cocinero','900 ml',430,100,1),(6,'Te','Taragui','50 saquitos',200,100,1),(7,'Mate','Nobleza Gaucha','25 saquitos',90,50,1),(8,'Detergente','Zorro','300ml',79,50,3),(9,'Shampo','Sedal','400ml',350,100,3),(10,'Papel Higiénico','Higienol','30 metros',169,200,3),(11,'Polenta','La Española','1 kg',130,100,1);
 UNLOCK TABLES;
-
-use bd_supermarket;
 
 CREATE TABLE clientes (
 id INT(4) NOT NULL AUTO_INCREMENT ,
@@ -39,19 +51,8 @@ email VARCHAR(35) NOT NULL ,
 clave VARCHAR(15) NOT NULL ,
 primary key (id, email)
  );
-
-CREATE TABLE `bd_supermarket`.`domicilio` (
-`calle1` VARCHAR(30) NOT NULL , 
-`calle2` VARCHAR(30) NULL , 
-`nro_calle` INT(5) NULL , 
-`manzana` VARCHAR(10) NULL , 
-`nro_piso` INT(5) NULL , 
-`nro_dpto` INT(5) NULL , 
-`barrio` VARCHAR(35) NOT NULL , 
-`id` INT(4) NOT NULL AUTO_INCREMENT , 
-PRIMARY KEY (`id`(4))) ENGINE = InnoDB;
-
-CREATE TABLE `comprobantes` (
+ 
+ CREATE TABLE `comprobantes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(1) DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT NULL,
@@ -60,19 +61,6 @@ CREATE TABLE `comprobantes` (
   KEY `cliente_comprobante_fk` (`id_cliente`),
   CONSTRAINT `cliente_comprobante_fk` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE `productos` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `marca` varchar(25) DEFAULT NULL,
-  `descripcion` varchar(50) DEFAULT NULL,
-  `precio` double DEFAULT NULL,
-  `stock` int DEFAULT NULL,
-  `id_categoria` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `categoria_idx` (`id_categoria`),
-  CONSTRAINT `id_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `detalles` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -83,12 +71,5 @@ CREATE TABLE `detalles` (
   KEY `comprobante_fk` (`id_comprobante`),
   KEY `producto_fk` (`id_producto`),
   CONSTRAINT `comprobante_fk` FOREIGN KEY (`id_comprobante`) REFERENCES `comprobantes` (`id`),
-  CONSTRAINT `producto_fk` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
+  CONSTRAINT `producto_fk` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-
-DROP TABLE `clientes`;
-DROP TABLE `facturas`;
-DROP TABLE `categoria`;
-DROP TABLE `productos`;
-DROP TABLE `descuento`;
-DROP TABLE `comprobantes`;
