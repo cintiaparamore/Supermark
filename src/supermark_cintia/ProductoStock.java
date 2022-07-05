@@ -11,19 +11,13 @@ public class ProductoStock extends Producto {
 		this.costo = costo;
 	}
 
-
-
 	public Double getCosto() {
 		return costo;
 	}
 
-
-
 	public void setCosto(Double costo) {
 		this.costo = costo;
 	}
-
-
 
 	public void mostrar() {
 
@@ -32,6 +26,6 @@ public class ProductoStock extends Producto {
 	}
 	public String crearQueryInsert() {
 		
-		return "insert into productos (fecha, nombre, marca, descripcion, precio, stock, id_categoria) values (now(), '"+super.getNombre()+"','"+super.getMarca()+"','"+super.getDescripcion()+"','"+super.getPrecio()+"','"+"
+		return "insert into productos (codigo,nombre, marca, descripcion, precio, stock, id_categoria) values ('"+super.getCodigo()+"','"+super.getNombre()+"','"+super.getMarca()+"','"+super.getDescripcion()+"','"+super.getPrecio()+"','"+super.getStock()+"','"+super.getCategoria()+"','"+this.costo+");";
 	}
 }

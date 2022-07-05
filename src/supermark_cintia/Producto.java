@@ -104,13 +104,17 @@ public class Producto {
 		System.out.println("Categoria: " + this.categoria);
 	}
 	
-	public boolean iguales(Producto p) {
-		if(this.nombre.equals(p.getNombre())) {
-			if(this.marca.equals(p.getMarca())) {
-				if(this.descripcion.equals(p.getDescripcion())) {
-					if(this.precio.equals(p.getPrecio())) {
-						if(this.stock.equals(p.getStock())){
-							if(this.categoria.equals(p.getCategoria())) {
+	public int getId() {
+		return this.codigo;
+	}
+	
+	public boolean iguales(Producto p1) {
+		if(this.nombre.equals(p1.getNombre())) {
+			if(this.marca.equals(p1.getMarca())) {
+				if(this.descripcion.equals(p1.getDescripcion())) {
+					if(this.precio.equals(p1.getPrecio())) {
+						if(this.stock.equals(p1.getStock())){
+							if(this.categoria.equals(p1.getCategoria())) {
 								return true;
 							}
 							else return false;
@@ -121,9 +125,9 @@ public class Producto {
 				}
 				else return false;
 			}
+			else return false;
 		}
 		return false;
-		
 	}
 
 }

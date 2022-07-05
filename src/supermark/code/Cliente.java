@@ -16,6 +16,7 @@ public class Cliente {
 	private String nombre;
 	private String apellido;
 	private String domicilio;
+  //Private Domicilio domicilio;
 	private String telefono;
 	private String localidad;
 	private Long dni;
@@ -157,7 +158,6 @@ public class Cliente {
 			stmt.executeUpdate(sql);
 
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
