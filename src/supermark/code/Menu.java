@@ -31,7 +31,6 @@ public class Menu {
         Scanner leer = new Scanner(System.in);
         if (leer.nextInt() == 2) {
         	
-    		System.out.println("Por favor ingrese una opcion: *");
     		System.out.println("_______________________________");
     		System.out.println("");
             System.out.println("Te gustaria registrarte?");

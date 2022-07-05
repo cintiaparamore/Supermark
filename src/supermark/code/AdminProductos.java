@@ -17,6 +17,7 @@ public class AdminProductos {
 		tecladoString.useDelimiter("\n"); // Para que me tome espacios entre palabras
 
 		boolean salir = false;
+		boolean salirmodi = false;
 		int opcion;
 
 		while (!salir) {
@@ -35,6 +36,8 @@ public class AdminProductos {
 			try {
 				System.out.println("Elije una opción: ");
 				opcion = teclado.nextInt();
+
+				salirmodi = false;
 
 				switch (opcion) {
 
@@ -59,7 +62,8 @@ public class AdminProductos {
 					System.out.println("Ingrese stock del producto: ");
 					sprodu = teclado.nextInt();
 
-					System.out.println("Ingrese la categoria del producto: ");
+					System.out.println("Ingrese el ID de la Categoria del producto: ");
+					System.out.println("ID : 1. Alimentos 2. Bebidas 3. Limpieza");
 					cprodu = teclado.nextInt();
 
 					produ.agregarProducto(nprodu, mprodu, dprodu, pprodu, sprodu, cprodu);
@@ -74,30 +78,85 @@ public class AdminProductos {
 					produ.listarUnProducto(modprodu);
 
 					int res;
-					System.out
-							.println("¿Qué desea modificar?\n (1)--> Nombre del producto\n (2)--> Precio del producto");
-					res = teclado.nextInt();
 
-					switch (res) {
+					while (!salirmodi) {
 
-					case 1: // Nombre
-						String nuevonombre;
-						System.out.println("Ingrese el nuevo nombre del producto: ");
-						nuevonombre = tecladoString.nextLine();
-						produ.modificarNombreProducto(modprodu, nuevonombre);
-						break;
+						System.out.println(
+								"¿Qué desea modificar?\n (1)--> Nombre del producto\n (2)--> Marca del producto\n"
+										+ " (3)--> Descripcion del producto\n (4)--> Precio del Producto\n (5)--> Stock del Producto\n"
+										+ " (6)--> Categoría del Prodcuto\n (7)--> Salir de modificación");
 
-					case 2: // Precio
-						Double nuevoprecio;
-						System.out.println("Ingrese el nuevo precio del producto: ");
-						nuevoprecio = teclado.nextDouble();
-						produ.modificarPrecioProducto(modprodu, nuevoprecio);
-						break;
+						res = teclado.nextInt();
 
-					default:
-						System.out.println("Ingrese una opción válida.");
+						try {
+							// System.out.println("Elije una opción: ");
+							// res = teclado.nextInt();
 
-					}
+							switch (res) {
+
+							case 1: // Nombre
+								String nuevonombre;
+								System.out.println("Ingrese el nuevo nombre del producto: ");
+								nuevonombre = tecladoString.nextLine();
+								produ.modificarNombreProducto(modprodu, nuevonombre);
+								salirmodi = true;
+								break;
+
+							case 2: // Marca
+								String nuevamarca;
+								System.out.println("Ingrese la nueva marca del producto: ");
+								nuevamarca = tecladoString.nextLine();
+								produ.modificarMarcaProducto(modprodu, nuevamarca);
+								salirmodi = true;
+								break;
+
+							case 3: // Descripcion
+								String nuevadescripcion;
+								System.out.println("Ingrese la nueva descripcion del producto: ");
+								nuevadescripcion = tecladoString.nextLine();
+								produ.modificarDescripcionProducto(modprodu, nuevadescripcion);
+								salirmodi = true;
+								break;
+
+							case 4: // Precio
+								Double nuevoprecio;
+								System.out.println("Ingrese el nuevo precio del producto: ");
+								nuevoprecio = teclado.nextDouble();
+								produ.modificarPrecioProducto(modprodu, nuevoprecio);
+								salirmodi = true;
+								break;
+
+							case 5: // Stock
+								int nuevostock;
+								System.out.println("Ingrese el nuevo stock del producto: ");
+								nuevostock = teclado.nextInt();
+								produ.modificarStockProducto(modprodu, nuevostock);
+								salirmodi = true;
+								break;
+
+							case 6: // Categoria
+								int nuevacategoria;
+								System.out.println("Ingrese la nueva categoria del producto: ");
+								nuevacategoria = teclado.nextInt();
+								produ.modificarCategoriaProducto(modprodu, nuevacategoria);
+								salirmodi = true;
+								break;
+
+							case 7: // Opción para salir
+								salirmodi = true;
+								break;
+
+							default:
+								System.out.println("Ingrese una opción válida.");
+							}
+
+						} catch (InputMismatchException e) {
+							System.out.println("¡¡¡ Sólo se permiten números del 1 al 7 !!!");
+							res = teclado.nextInt();
+							salirmodi = false;
+						}
+
+					} // del while
 
 					break;
 
@@ -114,9 +173,7 @@ public class AdminProductos {
 					respuesta = teclado.nextInt();
 
 					if (respuesta == 1) {
-
 						produ.eliminarProducto(eliminaprodu);
-
 					}
 
 					break;
