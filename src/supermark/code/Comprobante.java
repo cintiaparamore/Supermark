@@ -16,7 +16,7 @@ public class Comprobante {
 	private ArrayList<Detalle> detalles;
 
 	
-	public Factura(char tipo, Integer id, Date fecha, Cliente localidad, Domicilio domicilio, Cliente cliente,
+	public Comprobante(char tipo, Integer id, Date fecha, Cliente localidad, Cliente domicilio, Cliente cliente,
 			Producto stock, Producto descripcion, ArrayList<Detalle> detalles) {
 		super();
 		this.tipo = tipo;
@@ -76,13 +76,13 @@ public class Comprobante {
 
 
 
-	public Domicilio getDomicilio() {
+	public Cliente getDomicilio() {
 		return domicilio;
 	}
 
 
 
-	public void setDomicilio(Domicilio domicilio) {
+	public void setDomicilio(Cliente domicilio) {
 		this.domicilio = domicilio;
 	}
 

@@ -35,8 +35,6 @@ public class Producto {
 		super();
 	}
 
-	
-
 	public int getCodigo() {
 		return codigo;
 	}

@@ -1,9 +1,4 @@
-use bd_supermarket;
-DROP TABLE `categoria`;
-DROP TABLE `productos`;
-DROP TABLE `detalles`;
-DROP TABLE `comprobantes`;
-DROP TABLE `categoria`;
+use  bd_supermark;
 
 CREATE TABLE `categoria` (
   `idcategoria` int NOT NULL AUTO_INCREMENT,
@@ -48,8 +43,12 @@ telefono VARCHAR(15) NULL ,
 celular VARCHAR(15) NOT NULL ,
 localidad VARCHAR(25) NOT NULL ,
 email VARCHAR(35) NOT NULL , 
-clave VARCHAR(15) NOT NULL ,
 primary key (id, email)
+ );
+ 
+ CREATE TABLE usuario(
+ email varchar (35) primary key,
+ clave VARCHAR(15) NOT NULL
  );
  
  CREATE TABLE `comprobantes` (
@@ -73,3 +72,10 @@ CREATE TABLE `detalles` (
   CONSTRAINT `comprobante_fk` FOREIGN KEY (`id_comprobante`) REFERENCES `comprobantes` (`id`),
   CONSTRAINT `producto_fk` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE `categoria`;
+DROP TABLE `productos`;
+DROP TABLE `detalles`;
+DROP TABLE `comprobantes`;
+DROP TABLE `clientes`;
+DROP TABLE `usuario`;
