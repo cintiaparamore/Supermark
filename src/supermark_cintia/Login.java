@@ -36,6 +36,7 @@ public class Login {
 				System.out.println(registro);
 				
 				if(registro.equals(claveString)) {
+					
 					System.out.println("");
 					System.out.println("¡Bienvenido a Supermark!");
 					

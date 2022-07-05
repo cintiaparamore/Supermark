@@ -6,7 +6,6 @@ CREATE TABLE `categoria` (
   PRIMARY KEY (`idcategoria`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
 LOCK TABLES `categoria` WRITE;
 
 INSERT INTO `categoria` VALUES (1,'Alimentos'),(2,'Bebidas'),(3,'Limpieza');
@@ -34,7 +33,6 @@ UNLOCK TABLES;
 
 CREATE TABLE clientes (
 id INT(4) NOT NULL AUTO_INCREMENT ,
-fecha TIMESTAMP NOT NULL ,
 nombre VARCHAR(30) NOT NULL ,
 apellido VARCHAR(40) NOT NULL ,
 dni VARCHAR(10) NULL ,
