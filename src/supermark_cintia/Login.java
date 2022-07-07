@@ -3,12 +3,13 @@ package supermark_cintia;
 import java.util.Scanner;
 
 public class Login {
-	public boolean loguearme() {
+	public Cliente loguearme() {
 		
 		boolean rpta = true;
 		String emailString;
 		String claveString;
 		String registro;
+		Cliente cliente = null;
 		
 		Scanner leerScanner = new Scanner(System.in);
 		
@@ -37,15 +38,14 @@ public class Login {
 				
 				if(registro.equals(claveString)) {
 					
-					System.out.println("");
-					System.out.println("¡Bienvenido a Supermark!");
+					cliente = new Cliente(emailString, claveString);
 					
 				} else System.out.println("¡Error! La clave no corresponde al usuario: "+emailString);
 			}
 			
 		}
 	
-		return rpta;
+		return cliente;
 
 	}
 }

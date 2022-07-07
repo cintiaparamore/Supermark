@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RegistrarProducto {
+	
 	public boolean registrar() {
+		boolean rpta=true;
 		
 		String[]campos= {"ID","Nombre *:", "Marca *:", "Descripcion *:", "Precio *:", "Stock *:", "Categoria *:", "Costo *:"};
 		String []datos = new String [7];
@@ -17,7 +19,7 @@ public class RegistrarProducto {
 			datos[i]=leerScanner.nextLine();
 		}
 		
-		ProductoStock nuevoProductoStock=new ProductoStock(Integer.parseInt(datos[0]),datos[1],datos[2],datos[3],Double.parseDouble(datos[4]),Integer.parseInt(datos[5]),datos[6],Double.parseDouble(datos[8]));
+		ProductoStock nuevoProductoStock=new ProductoStock(Integer.parseInt(datos[0]),datos[1],datos[2],datos[3],Double.parseDouble(datos[4]),Integer.parseInt(datos[5]),datos[6],Double.parseDouble(datos[7]));
 		CrudConsultasBD crudbd=new CrudConsultasBD("com.mysql.cj.jdbc.Driver","jdbc:mysql://localhost:3306/bd_supermarket" ,"root","blackpink94");
 		
 		if(crudbd.conectar()) {
@@ -25,11 +27,11 @@ public class RegistrarProducto {
 			String string=crudbd.select("select codigo,nombre,marca,descripcion,precio,stock,categoria from productos;");
 			
 			String [] registros=string.split(";");
-			ArrayList< Producto> productoStocks=new ArrayList<Producto>();
+			ArrayList<Producto> productoStocks=new ArrayList<Producto>();
 			
 			for(int i=0;i<registros.length;i++) {
 				String [] registro=registros[i].split(",");
-				productoStocks.add(new Producto());
+				productoStocks.add(new Producto(Integer.parseInt(registro[0]),registro[1],registro[2],registro[3],Double.parseDouble(registro[4]),Integer.parseInt(registro[5]),registro[6]));
 			
 			}
 			

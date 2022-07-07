@@ -120,9 +120,9 @@ public class Producto {
 
 		try {
 			stmt = acceso.createStatement();
-		} catch (SQLException e) {
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 
 		// ResultSet rs= stmt.executeQuery(sql);
@@ -254,19 +254,23 @@ public class Producto {
 			int c = 0;
 
 			while (rs.next()) {
+				
 				int codigo = rs.getInt("codigo");
 				String nombre = rs.getString("nombre");
 				String marca = rs.getString("marca");
 				String descripcion = rs.getString("descripcion");
 				Double precio = rs.getDouble("precio");
 				int stock = rs.getInt("stock");
+	//			int categoria = rs.getInt("categoria");
 
 				System.out.print("Código: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
 				System.out.print("Descripción: " + descripcion + " | ");
 				System.out.println("Precio: " + precio + " | ");
-				System.out.println("Stock: " + stock);
+				System.out.println("Stock: " + stock+ " | ");
+		//		System.out.print("Categoria ID: " + categoria + " | ");
+				
 				c++;
 			}
 
@@ -304,13 +308,15 @@ public class Producto {
 			String descripcion = rs.getString("descripcion");
 			Double precio = rs.getDouble("precio");
 			int stock = rs.getInt("stock");
+	//		int categoria = rs.getInt("categoria");
 
 			System.out.print("Código: " + codigo + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
 			System.out.print("Descripción: " + descripcion + " | ");
 			System.out.println("Precio: " + precio + " | ");
-			System.out.println("Stock: " + stock);
+			System.out.println("Stock: " + stock+ " | ");
+	//		System.out.println("Categoria ID: "+categoria+ " | ");
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -3,57 +3,98 @@ package supermark_cintia;
 import java.util.Scanner;
 
 public class Menu {
-	static Scanner leerScanner = new Scanner(System.in);
-
+	static Scanner leer=new Scanner(System.in);
 	public static void main(String[] args) {
-
-		System.out.println("**********¡Bienvenido a Supermark!**********");
-		System.out.println("");
-		System.out.println("Por favor ingrese una opcion: *");
-		System.out.println("_______________________________");
-		System.out.println("");
-
+		// TODO Auto-generated method stub
+		
 		switch (menu()) {
-		case 1:
-			Login login = new Login();
-			login.loguearme();
+			case 1:
+				Login login=new Login();
+				Cliente cliente=login.loguearme();
+				
+				if(cliente!=null) {
+					System.out.println("**********Bienvenido a Supermark**********");
+					
+					switch (menuCliente()) {
+					case 1:
+						System.out.println("Usuario:"+cliente.getEmail());
+					break;
+					case 2:
+						System.out.println("Historial");
+					break;
+					case 3:
+						System.out.println("Productos");
+					break;
+					case 4:
+						System.out.println("Carrito");
+					break;
+					default:
+						System.out.println("Saliendo de supermark");
+						
+					}
+					
+					
+				}
+				else {
+					
+				}
 			break;
-
-		case 2:
-			Registro registro = new Registro();
-			registro.Registrarme();
-
+			case 2:
+				Registro registro=new Registro();
+				
+				registro.Registrarme();
+				
 			break;
 		default:
-
-			System.out.println("Usted esta saliendo de Supermark");
-			System.out.println("Que tenga buen dia. ¡Saludos!");
-
+			System.out.println("Usted esta saliendo de SuperMark...");
 		}
-	}
+		
 
+	}
+	
 	public static int menu() {
-
-		int rpta;
-		Scanner leer= new Scanner(System.in);
-
-		do {
-			
-			System.out.println("1. Iniciar Sesion *");
-			System.out.println("2. Registrarme *");
-			System.out.println("0. Salir *");
-			System.out.println("_______________________________");
-			System.out.println("");
-
-			rpta = leer.nextInt();
-
-			if (rpta < 0 || rpta > 2) {
-				System.out.println("Ingrese una opcion valida");
+		
+		String rta;
+		
+		
+		do{
+			System.out.println("1. Iniciar sesion");
+			System.out.println("2. Registrarme");
+			System.out.println("0. Salir");
+			System.out.print("Ingrese una opcion:");
+			rta=leer.nextLine();
+		
+			if(rta.equalsIgnoreCase("0")==false && rta.equalsIgnoreCase("1")==false && rta.equalsIgnoreCase("2")==false) {
+				System.out.println("Ingrese una opcion Valida...");
 			}
-
-		} while (rpta < 0 || rpta > 2);
-
-		return rpta;
-
+			
+		}while(rta.equalsIgnoreCase("0")==false && rta.equalsIgnoreCase("1")==false && rta.equalsIgnoreCase("2")==false);
+		
+		return Integer.parseInt(rta);
+		
+		
 	}
+	
+	public static int menuCliente() {
+		String rta;
+		
+		do{
+			System.out.println("1. Ver Usuario");
+			System.out.println("2. Ver Historial de Compras");
+			System.out.println("3. Comprar");
+			System.out.println("4. Ver Carrito");
+			System.out.println("0. Salir");
+			System.out.print("Ingrese una opcion:");
+			rta=leer.nextLine();
+		
+			if(rta.equalsIgnoreCase("0")==false && rta.equalsIgnoreCase("1")==false && rta.equalsIgnoreCase("2")==false&& rta.equalsIgnoreCase("3")==false && rta.equalsIgnoreCase("4")==false) {
+				System.out.println("Ingrese una opcion Valida...");
+			}
+			
+		}while(rta.equalsIgnoreCase("0")==false && rta.equalsIgnoreCase("1")==false && rta.equalsIgnoreCase("2")==false && rta.equalsIgnoreCase("3")==false && rta.equalsIgnoreCase("4")==false);
+		
+		return Integer.parseInt(rta);
+		
+	}
+
 }

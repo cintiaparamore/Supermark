@@ -1,5 +1,4 @@
 use  bd_supermark;
-
 CREATE TABLE `categoria` (
   `idcategoria` int NOT NULL AUTO_INCREMENT,
   `nombrecate` varchar(45) DEFAULT NULL,
@@ -71,9 +70,16 @@ CREATE TABLE `detalles` (
   CONSTRAINT `producto_fk` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `descuento` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `porcentaje` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
 DROP TABLE `categoria`;
 DROP TABLE `productos`;
 DROP TABLE `detalles`;
 DROP TABLE `comprobantes`;
 DROP TABLE `clientes`;
 DROP TABLE `usuario`;
+DROP TABLE `descuento`;

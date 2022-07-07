@@ -1,4 +1,4 @@
-package supermark.code;
+/*package supermark.code;
 
 public class ProductoStock {
 	
@@ -29,4 +29,4 @@ public class ProductoStock {
 	    System.out.println("Precio: " + this.precio);
 	
 	}
-}
+}*/

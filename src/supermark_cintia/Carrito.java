@@ -1,17 +1,8 @@
-package supermark.code;
+package supermark_cintia;
 
-import java.sql.Date;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Carrito {
-	
-	Statement stmt = null;
-	ConexionBDD connection = new ConexionBDD();
-	Connection acceso;
 	
 	private int id;
 	private String fecha;
@@ -62,8 +53,13 @@ public class Carrito {
 	}
 
 	public void agregar(ProductoCarrito nuevo) {
+		int acum=0;
+			
+		for(int i=0;i<this.productos.size();i++) {
+			acum=acum+this.productos.get(i).getCantidad();
+		}
 		
-		if(this.productos.size()<30) {
+		if(acum+nuevo.getCantidad()<=30) {
 			this.productos.add(nuevo);
 		}
 		else System.out.println("¡Lo siento! pero excede los 30 articulos por compra. Vuelva a realizar otra compra");
@@ -84,7 +80,8 @@ public class Carrito {
 		if (pos > 0 && pos < this.productos.size()) {
 			this.productos.remove(pos);
 		} else
-			System.err.println("¡Error!");
+			System.err.println("Error");
+		;
 
 	}
 	

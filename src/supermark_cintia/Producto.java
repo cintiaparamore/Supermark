@@ -1,14 +1,6 @@
 package supermark_cintia;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Producto {
-
-	Statement stmt = null;
-
-	Connection acceso;
 
 	private int codigo;
 	private String nombre;
@@ -18,9 +10,19 @@ public class Producto {
 	private Integer stock;
 	private String categoria;
 
+	public Producto(String nombre, String marca, String descripcion, Double precio, Integer stock,
+			String categoria) {
+		super();
+		this.nombre = nombre;
+		this.marca = marca;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.stock = stock;
+		this.categoria = categoria;
+	}
+	
 	public Producto(int codigo, String nombre, String marca, String descripcion, Double precio, Integer stock,
 			String categoria) {
-		
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;

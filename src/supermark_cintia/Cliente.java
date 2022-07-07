@@ -11,9 +11,8 @@ public class Cliente {
 	private String localidad;
 	private String email;
 	private String clave;
+
 	
-
-
 	public Cliente(String nombre, String apellido, String dni, String domicilio, String telefono, String celular,
 			String localidad, String email, String clave) {
 		super();
@@ -24,6 +23,12 @@ public class Cliente {
 		this.telefono = telefono;
 		this.celular = celular;
 		this.localidad = localidad;
+		this.email = email;
+		this.clave = clave;
+	}
+	
+	public Cliente(String email, String clave) {
+		super();
 		this.email = email;
 		this.clave = clave;
 	}

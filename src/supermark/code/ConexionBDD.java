@@ -37,7 +37,7 @@ public class ConexionBDD {
 			System.out.println("Algun error al conectarse a la base de datos");
 		}
 
-		System.out.println("******FIN******");
+//		System.out.println("******FIN******");
 		return connection;
 
 	}
