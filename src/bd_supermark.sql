@@ -1,4 +1,5 @@
 use  bd_supermark;
+
 CREATE TABLE `categoria` (
   `idcategoria` int NOT NULL AUTO_INCREMENT,
   `nombrecate` varchar(45) DEFAULT NULL,
@@ -58,7 +59,7 @@ primary key (id, email)
   CONSTRAINT `cliente_comprobante_fk` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `detalles` (
+CREATE TABLE `detalle_comprobantes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_comprobante` int NOT NULL,
   `id_producto` int unsigned NOT NULL,
@@ -76,9 +77,27 @@ CREATE TABLE `descuento` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE ventas(
+id_ventas int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fecha TIMESTAMP NOT NULL ,
+id int,
+foreign key (id) references clientes (id)
+)ENGINE=InnoDB;
+
+CREATE TABLE detalle_ventas(
+id_ventas int,
+codigo int unsigned,
+cantidad int,
+foreign key (id_ventas) references ventas (id_ventas),
+foreign key (codigo) references productos (codigo)
+)ENGINE=InnoDB;
+
+select ventas.id_ventas, ventas.fecha, productos.nombre, productos.marca, productos.precio, detalle_ventas.cantidad from clientes inner join ventas using (id) inner join detalle_ventas using (id_ventas)
+inner join productos using (codigo) where id=1;
+
 DROP TABLE `categoria`;
 DROP TABLE `productos`;
-DROP TABLE `detalles`;
+DROP TABLE `detalle_comprobantes`;
 DROP TABLE `comprobantes`;
 DROP TABLE `clientes`;
 DROP TABLE `usuario`;
