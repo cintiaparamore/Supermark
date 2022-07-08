@@ -94,14 +94,22 @@ public class Usuario {
 				System.out.println("Login correcto");
 				return true;
 			}
-			else {System.out.println("Error en email o contrase;a"); return false;}
+			else {
+				System.out.println("Error en email o contrase;a");
+				System.exit(1);
+				return false;}
 
 		}catch(HeadlessException | SQLException e){
 		}
 		return false;
 	}
 
-	public boolean login(){
+	public int login(){
+		acceso = connection.connect();
+		ResultSet rs;
+		String rol = "";
+		String roldb = "admin";
+
 		String email;
 		String clave;
 		System.out.println("Ingrese email");
@@ -110,17 +118,22 @@ public class Usuario {
 		System.out.println("Ingrese su clave");
 		clave = leer.nextLine();
 		Usuario user = new Usuario(email,clave);
+		try{
+			if (user.verificarUsuario(user)){
+				String query ="SELECT rol from usuario WHERE email ='"+email+"'";
+				stmt = acceso.createStatement();
+				rs = stmt.executeQuery(query);
+				while (rs.next()){
+					rol = rs.getString("rol");
+				}
+				if (roldb.equals(rol)){
+					System.out.println("Admin detectado");
+					return 2;
+				}
+				else {System.out.println("Usuario detectado"); return 1;}
 
-		if (user.verificarUsuario(user)){
-			return true;
-		}
-		else return false;
-	
-	/*
-	 * public static void main(String arg[]) { Usuario p1 = new
-	 * Usuario("cintiaparamore", "qwertyasdfzxcvb25"); p1.mostrar();
-	 * 
-	 * }
-	 */
+			}}catch(HeadlessException | SQLException e){
+			}
+		return 0;
 	}
 }

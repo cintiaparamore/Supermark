@@ -1,3 +1,4 @@
+/*
 package supermark.code;
 
 import java.util.Scanner;
@@ -39,5 +40,6 @@ public class ConfirmacionDeCompra {
 		}
 	}
 }
+*/
 
 
