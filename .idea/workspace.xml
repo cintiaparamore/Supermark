@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4baf63bb-3949-4408-8e84-8227f4ce56be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Comprobante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Comprobante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/ConexionBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/ConexionBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/ConfirmacionDeCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/ConfirmacionDeCompra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Detalle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Detalle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supermark/code/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

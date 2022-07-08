@@ -130,7 +130,7 @@ public class Usuario {
 					System.out.println("Admin detectado");
 					return 2;
 				}
-				else {System.out.println("Usuario detectado"); return 1;}
+				else return 1;
 
 			}}catch(HeadlessException | SQLException e){
 			}
