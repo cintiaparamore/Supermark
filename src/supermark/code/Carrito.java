@@ -67,7 +67,7 @@ public class Carrito {
 		if(this.productos.size()<30) {
 			this.productos.add(nuevo);
 		}
-		else System.out.println("¡Lo siento! pero excede los 30 articulos por compra. Vuelva a realizar otra compra");
+		else System.out.println("Â¡Lo siento! pero excede los 30 articulos por compra. Vuelva a realizar otra compra");
 		
 	} 
 
@@ -85,7 +85,7 @@ public class Carrito {
 		if (pos > 0 && pos < this.productos.size()) {
 			this.productos.remove(pos);
 		} else
-			System.err.println("¡Error!");
+			System.err.println("Â¡Error!");
 
 	}
 	

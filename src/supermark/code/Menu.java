@@ -10,15 +10,16 @@ import java.util.Scanner;
 public class Menu {
 	
     public static void main(String[] args)  {
-        Usuario usuario = new Usuario();
-        Cliente cliente = new Cliente();
         Menu.bienvenida();
     }
     public static void bienvenida() {
         Usuario usuario = new Usuario();
         Cliente cliente = new Cliente();
         
-        System.out.println("***************Bienvenido a Supermark***************");
+        System.out.println("____________________________________________________");
+        System.out.println();
+        System.out.println("              ¡Bienvenido a Supermark!");
+        System.out.println("____________________________________________________");
         System.out.println("");
 		System.out.println("Por favor ingrese una opcion: *");
 		System.out.println("_______________________________");
@@ -46,8 +47,7 @@ public class Menu {
                }
                else bienvenida();
             } else System.out.println("Que tenga buen dia");
-        } else if (usuario.login()){
-            AdminProductos.main(null);
+        } else usuario.login();
         }
-    }
+
 }
