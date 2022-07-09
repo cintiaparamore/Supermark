@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4baf63bb-3949-4408-8e84-8227f4ce56be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Carrito.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Carrito.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Detalle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Detalle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Producto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/ProductoCarrito.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/ProductoCarrito.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/supermark/code/miCuenta.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/miCuenta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Carrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/ConfirmacionDeCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/ConfirmacionDeCompra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Detalle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Detalle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supermark/code/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/ProductoCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/ProductoCarrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supermark/code/miCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/miCuenta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

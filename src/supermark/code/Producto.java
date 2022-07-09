@@ -417,7 +417,6 @@ public class Producto {
 			System.out.print("Stock: " + stock + " | ");
 
 			productoCarrito1 = new ProductoCarrito(codigo,nombre,marca,descripcion,precio,stock,cantidad);
-			System.out.println(productoCarrito1.getMarca());
 			return productoCarrito1;
 
 		} catch (SQLException e) {

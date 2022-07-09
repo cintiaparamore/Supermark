@@ -57,6 +57,7 @@ public class miCuenta {
 		Connection acceso;
 		Scanner leer = new Scanner(System.in);
 
+		System.out.println("");
 		System.out.println("---------------------------------------");
 		System.out.println("-------------- MI CUENTA --------------");
 		System.out.println("---------------------------------------");
@@ -66,6 +67,7 @@ public class miCuenta {
 		System.out.println("-(4)- Ver Productos Seleccionados");
 		System.out.println("-(5)- Confirmar Compra");
 		System.out.println("---------------------------------------");
+		System.out.println("");
 
 		switch (leer.nextInt()){
 
@@ -130,7 +132,6 @@ public class miCuenta {
 				ProductoCarrito productoCarrito = new ProductoCarrito();
 				productoCarrito = producto1.listarUnProductoCarrito(prodSel,prodCantidad);
 				if (productoCarrito.getStock() > prodCantidad ){
-					System.out.println(productoCarrito.getcodigo());
 					carrito1.agregar(productoCarrito);
 
 					miCuenta.menuUsuario(user);
