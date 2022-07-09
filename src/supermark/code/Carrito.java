@@ -36,8 +36,11 @@ public class Carrito {
 		this.fecha = fecha;
 		this.productos = productos;
 	}
-	
-	
+
+	public Carrito(Object o, Object o1, Object o2, int opcion1) {
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -67,7 +70,7 @@ public class Carrito {
 		if(this.productos.size()<30) {
 			this.productos.add(nuevo);
 		}
-		else System.out.println("¡Lo siento! pero excede los 30 articulos por compra. Vuelva a realizar otra compra");
+		else System.out.println("ï¿½Lo siento! pero excede los 30 articulos por compra. Vuelva a realizar otra compra");
 		
 	} 
 
@@ -85,7 +88,7 @@ public class Carrito {
 		if (pos > 0 && pos < this.productos.size()) {
 			this.productos.remove(pos);
 		} else
-			System.err.println("¡Error!");
+			System.err.println("ï¿½Error!");
 
 	}
 	
@@ -94,7 +97,9 @@ public class Carrito {
 		System.out.println("Fecha:"+this.fecha);
 		if(this.productos.size()!=0) {
 			for(int i=0;i<this.productos.size();i++) {
-				this.productos.get(i).mostrar();
+				this.productos.get(i).mostrarCarrito();
+				System.out.print("Cantidad: " +this.productos.get(i).getCantidad());
+				System.out.println("");
 				total=total+this.productos.get(i).getCantidad()*this.productos.get(i).getPrecio();
 			}
 			System.out.println("Total: $"+total);
@@ -103,5 +108,8 @@ public class Carrito {
 		
 	}
 
+	public float getTotal() {
+		return 0;
+	}
 }
 

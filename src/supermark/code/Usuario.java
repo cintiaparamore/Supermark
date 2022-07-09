@@ -76,7 +76,7 @@ public class Usuario {
 	}
 	
 	public boolean verificarUsuario(Usuario user){
-		String email = user.getEmail();
+  		String email = user.getEmail();
 		String clave = user.getClave();
 		acceso = connection.connect();
 		ResultSet rs;
@@ -96,7 +96,8 @@ public class Usuario {
 			}
 			else {
 				System.out.println("Error en email o contrase;a");
-				System.exit(1);
+				Menu.bienvenida();
+				//System.exit(1);
 				return false;}
 
 		}catch(HeadlessException | SQLException e){
@@ -104,7 +105,7 @@ public class Usuario {
 		return false;
 	}
 
-	public int login(){
+	public boolean login(){
 		acceso = connection.connect();
 		ResultSet rs;
 		String rol = "";
@@ -128,12 +129,13 @@ public class Usuario {
 				}
 				if (roldb.equals(rol)){
 					System.out.println("Admin detectado");
-					return 2;
+					AdminProductos.main(null);
+					return true;
 				}
-				else return 1;
+				else miCuenta.menuUsuario(user); return false;
 
 			}}catch(HeadlessException | SQLException e){
 			}
-		return 0;
+		return false;
 	}
 }

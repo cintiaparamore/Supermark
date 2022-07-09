@@ -31,6 +31,15 @@ public class Producto {
 		this.stock = stock;
 		this.categoria = categoria;
 	}
+	public Producto(int codigo, String nombre, String marca, String descripcion, Double precio, Integer stock) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.marca = marca;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.stock = stock;
+	}
 
 	public Producto() {
 		super();
@@ -325,4 +334,105 @@ public class Producto {
 
 	}
 
+	public boolean listarProductosCuenta() {
+
+		System.out.println("LISTADO DE PRODUCTOS");
+
+		try {
+
+			String sql = "Select * from productos";
+
+			acceso = connection.connect();
+			stmt = acceso.createStatement();
+
+			ResultSet rs = stmt.executeQuery(sql);
+
+			int c = 0;
+
+			while (rs.next()) {
+
+				int codigo = rs.getInt("codigo");
+				String nombre = rs.getString("nombre");
+				String marca = rs.getString("marca");
+				String descripcion = rs.getString("descripcion");
+				Double precio = rs.getDouble("precio");
+				int stock = rs.getInt("stock");
+				//			int categoria = rs.getInt("categoria");
+
+				System.out.print("Código: " + codigo + " | ");
+				System.out.print("Nombre: " + nombre + " | ");
+				System.out.print("Marca: " + marca + " | ");
+				System.out.print("Descripción: " + descripcion + " | ");
+				System.out.print("Precio: " + precio + " | ");
+				System.out.print("Stock: " + stock+ " | ");
+				System.out.println("");
+				//		System.out.print("Categoria ID: " + categoria + " | ");
+
+				c++;
+			}
+
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("Error al conectarse a la Base de Datos.");
+			e1.printStackTrace();
+		}
+		return false;
+	}
+
+
+	public ProductoCarrito listarUnProductoCarrito(int codigoBuscado, Integer cantidad) {
+
+		ProductoCarrito productoCarrito1 = new ProductoCarrito();
+
+		System.out.println("------- PRODUCTO SELECCIONADO -------");
+
+		String sql = "SELECT * FROM productos WHERE codigo=" + codigoBuscado;
+
+		acceso = connection.connect();
+		try {
+			stmt = acceso.createStatement();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			ResultSet rs;
+
+			rs = stmt.executeQuery(sql);
+			rs.next();
+			int codigo = rs.getInt("codigo");
+			String nombre = rs.getString("nombre");
+			String marca = rs.getString("marca");
+			String descripcion = rs.getString("descripcion");
+			Double precio = rs.getDouble("precio");
+			int stock = rs.getInt("stock");
+			//		int categoria = rs.getInt("categoria");
+
+			System.out.print("Codigo: " + codigo + " | ");
+			System.out.print("Nombre: " + nombre + " | ");
+			System.out.print("Marca: " + marca + " | ");
+			System.out.print("Descripcion: " + descripcion + " | ");
+			System.out.print("Precio: " + precio + " | ");
+			System.out.print("Stock: " + stock + " | ");
+
+			productoCarrito1 = new ProductoCarrito(codigo,nombre,marca,descripcion,precio,stock,cantidad);
+			System.out.println(productoCarrito1.getMarca());
+			return productoCarrito1;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return productoCarrito1;
+
+	}
+	public void mostrarCarrito() {
+
+		System.out.print("Codigo: " + this.codigo+ " | ");
+		System.out.print("Nombre: " + this.nombre+ " | ");
+		System.out.print("Marca: " + this.marca+ " | ");
+		System.out.print("Descripcion: " + this.descripcion+ " | ");
+		System.out.print("Precio: " + this.precio+ " | ");
+	}
 }

@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class Menu {
 	
     public static void main(String[] args)  {
-        Usuario usuario = new Usuario();
-        Cliente cliente = new Cliente();
         Menu.bienvenida();
     }
     public static void bienvenida() {
@@ -46,16 +44,7 @@ public class Menu {
                }
                else bienvenida();
             } else System.out.println("Que tenga buen dia");
-        } else login(usuario);
+        } else usuario.login();
         }
 
-
-
-    public static void login(Usuario usuario){
-
-        if (usuario.login() == 2){
-            AdminProductos.main(null);
-        }
-        else System.out.println("carrito");
-    }
 }
