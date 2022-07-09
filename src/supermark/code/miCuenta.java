@@ -123,9 +123,9 @@ public class miCuenta {
 				}
 
 			case 3:
-				System.out.println("Seleccionar producto");
+				System.out.println("Seleccionar codigo de producto");
 				int prodSel = leer.nextInt();
-				System.out.println("selecionar cantidad");
+				System.out.println("selecionar cantidad de producto");
 				Integer prodCantidad = leer.nextInt();
 				ProductoCarrito productoCarrito = new ProductoCarrito();
 				productoCarrito = producto1.listarUnProductoCarrito(prodSel,prodCantidad);
