@@ -27,7 +27,32 @@ public class Menu {
 		System.out.println("_______________________________");
 		
         Scanner leer = new Scanner(System.in);
-        if (leer.nextInt() == 2) {
+        switch (leer.nextInt()){
+            case 2:
+                System.out.println("_______________________________");
+                System.out.println("");
+                System.out.println("Te gustaria registrarte?");
+                System.out.println("1. Si");
+                System.out.println("2. No");
+                System.out.println("_______________________________");
+                if (leer.nextInt() == 1) {
+                    if (usuario.registrarUsuario() == true){
+                        cliente.registrarCliente();
+                        System.out.println("Regresando al inicio");
+                        bienvenida();
+                    }
+                    else bienvenida();
+                } else System.out.println("Que tenga buen dia");
+                break;
+            case 1:
+                usuario.login();
+                break;
+            default:
+                System.out.println("Ingrese una opcion valida");
+                bienvenida();
+                break;
+        }
+        /*  if (leer.nextInt() == 2) {
         	
     		System.out.println("_______________________________");
     		System.out.println("");
@@ -44,7 +69,7 @@ public class Menu {
                }
                else bienvenida();
             } else System.out.println("Que tenga buen dia");
-        } else usuario.login();
+        } else usuario.login();*/
         }
 
 }

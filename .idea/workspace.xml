@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4baf63bb-3949-4408-8e84-8227f4ce56be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/supermark/code/miCuenta.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/miCuenta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supermark/code/miCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/miCuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/supermark/code/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/supermark/code/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supermark/code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/supermark/code/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
