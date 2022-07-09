@@ -144,7 +144,7 @@ public class miCuenta {
 				miCuenta.menuUsuario(user);
 
 			case 5:
-				System.out.println("test");
+				System.out.println("confirmar compra(pendiente)");
 				miCuenta.menuUsuario(user);
 
 		}
