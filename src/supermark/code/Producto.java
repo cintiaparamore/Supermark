@@ -272,10 +272,10 @@ public class Producto {
 				int stock = rs.getInt("stock");
 	//			int categoria = rs.getInt("categoria");
 
-				System.out.print("Código: " + codigo + " | ");
+				System.out.print("Codigo: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
-				System.out.print("Descripción: " + descripcion + " | ");
+				System.out.print("Descripcion: " + descripcion + " | ");
 				System.out.println("Precio: " + precio + " | ");
 				System.out.println("Stock: " + stock+ " | ");
 		//		System.out.print("Categoria ID: " + categoria + " | ");
@@ -319,10 +319,10 @@ public class Producto {
 			int stock = rs.getInt("stock");
 	//		int categoria = rs.getInt("categoria");
 
-			System.out.print("Código: " + codigo + " | ");
+			System.out.print("Codigo: " + codigo + " | ");
 			System.out.print("Nombre: " + nombre + " | ");
 			System.out.print("Marca: " + marca + " | ");
-			System.out.print("Descripción: " + descripcion + " | ");
+			System.out.print("Descripcion: " + descripcion + " | ");
 			System.out.println("Precio: " + precio + " | ");
 			System.out.println("Stock: " + stock+ " | ");
 	//		System.out.println("Categoria ID: "+categoria+ " | ");
@@ -359,10 +359,10 @@ public class Producto {
 				int stock = rs.getInt("stock");
 				//			int categoria = rs.getInt("categoria");
 
-				System.out.print("Código: " + codigo + " | ");
+				System.out.print("Codigo: " + codigo + " | ");
 				System.out.print("Nombre: " + nombre + " | ");
 				System.out.print("Marca: " + marca + " | ");
-				System.out.print("Descripción: " + descripcion + " | ");
+				System.out.print("Descripcion: " + descripcion + " | ");
 				System.out.print("Precio: " + precio + " | ");
 				System.out.print("Stock: " + stock+ " | ");
 				System.out.println("");

@@ -187,7 +187,7 @@ public class AdminProductos {
 				case 5: // Opción de Listar un producto
 
 					int cod;
-					System.out.println("Ingrese un código de producto: ");
+					System.out.println("Ingrese un codigo de producto: ");
 					cod = teclado.nextInt();
 
 					produ.listarUnProducto(cod);
@@ -196,6 +196,7 @@ public class AdminProductos {
 
 				case 6: // Opción para salir
 					salir = true;
+					System.out.println("¡Hasta Luego!. Vuelva a ingresar al menu principal");
 					break;
 
 				default:

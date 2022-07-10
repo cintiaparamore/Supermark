@@ -95,7 +95,7 @@ public class Usuario {
 				return true;
 			}
 			else {
-				System.out.println("Error en email o contrase;a");
+				System.out.println("Error en email o clave");
 				Menu.bienvenida();
 				//System.exit(1);
 				return false;}

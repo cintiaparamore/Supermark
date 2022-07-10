@@ -16,11 +16,14 @@ public class Menu {
         Usuario usuario = new Usuario();
         Cliente cliente = new Cliente();
         
-        System.out.println("***************Bienvenido a Supermark***************");
-        System.out.println("");
+        System.out.println("__________________________________________");
+        System.out.println();
+        System.out.println("          Bienvenido a Supermark          ");
+        System.out.println("__________________________________________");
+        System.out.println();
 		System.out.println("Por favor ingrese una opcion: *");
 		System.out.println("_______________________________");
-		System.out.println("");
+		System.out.println();
         System.out.println("¿Esta registrado?");
         System.out.println("1. Si");
         System.out.println("2. No");
