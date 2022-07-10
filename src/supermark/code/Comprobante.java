@@ -1,10 +1,15 @@
 package supermark.code;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Comprobante {
 
+	Statement stmt = null;
+	ConexionBDD connection = new ConexionBDD();
+	Connection acceso;
 	private char tipo;
 	private Integer id;
 	private Date fecha;

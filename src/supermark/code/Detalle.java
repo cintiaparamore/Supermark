@@ -1,6 +1,12 @@
 package supermark.code;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 public class Detalle {
+	Statement stmt = null;
+	ConexionBDD connection = new ConexionBDD();
+	Connection acceso;
 	
 	private Producto stock;
 	private Producto descripcion;
@@ -79,5 +85,5 @@ public void mostrar() {
 		System.out.println("Total: "+this.total);
 
 	}
-	
 }
+

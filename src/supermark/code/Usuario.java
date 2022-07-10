@@ -132,7 +132,7 @@ public class Usuario {
 					AdminProductos.main(null);
 					return true;
 				}
-	//			else miCuenta.menuUsuario(user); return false;
+				else miCuenta.menuUsuario(user); return false;
 
 			}}catch(HeadlessException | SQLException e){
 			}

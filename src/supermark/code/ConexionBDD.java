@@ -2,17 +2,17 @@ package supermark.code;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.Statement;
 
 public class ConexionBDD {
 
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/bd_supermark";
 	static final String USER = "root";
-	static final String PASS = "blackpink94";
+	static final String PASS = "123456789";
 
 	private	Connection connection = null;
 //	private	Statement stmt = null;

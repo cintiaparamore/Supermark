@@ -46,11 +46,8 @@ primary key (id, email)
  
  CREATE TABLE usuario(
  email varchar (35) primary key,
- clave VARCHAR(15) NOT NULL,
- rol varchar (10)
+ clave VARCHAR(15) NOT NULL
  );
- 
- UPDATE `bd_supermark`.`usuario` SET `rol` = 'admin' WHERE (`email` = 'cintiaparamore@gmail.com');
  
  CREATE TABLE `comprobantes` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -105,5 +102,3 @@ DROP TABLE `comprobantes`;
 DROP TABLE `clientes`;
 DROP TABLE `usuario`;
 DROP TABLE `descuento`;
-DROP TABLE `ventas`;
-DROP TABLE `detalle_ventas`;

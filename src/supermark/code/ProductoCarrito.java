@@ -26,15 +26,24 @@ public class ProductoCarrito extends Producto {
 		
 		this.cantidad = cantidad;
 	}
+	public ProductoCarrito(int codigo, String nombre, String marca, String descripcion, Double precio, Integer stock, Integer cantidad) {
+		super(codigo, nombre, marca, descripcion, precio, stock);
+		this.cantidad = cantidad;
+	}
 	
 	public ProductoCarrito(Integer cantidad) {
 		super();
 		this.cantidad = cantidad;
 	}
 
+	public ProductoCarrito() {
+
+	}
+
 	public Integer getCantidad() {
 		return cantidad;
 	}
+
 
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
