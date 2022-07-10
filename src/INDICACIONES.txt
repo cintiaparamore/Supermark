@@ -1,0 +1,32 @@
+
+COMISIÓN: CT3
+GRUPO: G01
+TURNO: TARDE 
+INTEGRANTES:	CARRASCO, CINTIA
+		PALAVECINO, CECILIA INÉS
+		ZELAYA, LUIS
+		ZÁRATE, JOHANNA
+
+
+INDICACIONES PARA EL USO DEL SISTEMA SUPERMARK
+
+1) Importar la Base de Datos de nombre: "G01CT3_bd_supermark.sql" alojada en el repositorio.
+
+2) La Base de Datos cuenta con dos usuarios de prueba, un cliente y un administrador:
+
+***********************************************
+EMAIL USUARIO CLIENTE: 		cliente@cliente  
+CONTRASEÑA USUARIO CLIENTE:	123456
+***********************************************
+
+***********************************************
+EMAIL USUARIO ADMIN: 		admin@admin  
+CONTRASEÑA USUARIO ADMIN:	123456
+***********************************************
+
+Dependiendo si el usuario es cliente o admin, se visualizará el menú correspondiente.
+
+3) El sistema inicia desde la clase: Menu.java 
+
+ 	 
+
